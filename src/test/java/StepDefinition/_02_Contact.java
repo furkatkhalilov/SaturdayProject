@@ -4,7 +4,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class Contact {
+public class _02_Contact {
 
     @When("^Enter firstname lastname contact information and click on save button$")
     public void enter_firstname_lastname_contact_information_and_click_on_save_button(){
@@ -19,16 +19,23 @@ public class Contact {
     }
 
     @And("^Enter firstname lastname contact information$")
-    public void enter_firstname_lastname_contact_information() throws Throwable {
+    public void enter_firstname_lastname_contact_information() {
 
         System.out.println("Enter firstname lastname contact information");
+
     }
 
     @When("^Click on save button$")
-    public void click_on_save_button() throws Throwable {
+    public void click_on_save_button() {
 
         System.out.println("Click on save button");
     }
 
+    @Then("^Edit contact$")
+    public void edit_contact() {
+
+        System.out.println("Edit contact");
+
+    }
 
 }

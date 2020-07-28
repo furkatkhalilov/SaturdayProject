@@ -4,7 +4,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class LoginSteps {
+public class _01_LoginSteps {
 
     /*
         Not able to create same step in multiple step definition classes.
