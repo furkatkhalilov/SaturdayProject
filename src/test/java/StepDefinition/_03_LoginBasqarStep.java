@@ -1,12 +1,15 @@
 package StepDefinition;
 
+import Utilities.Driver;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class _03_LoginBasqarStep {
 
@@ -19,8 +22,8 @@ public class _03_LoginBasqarStep {
             Set property - open browser and navigate to website
          */
 
-        WebDriverManager.chromedriver().setup(); // this line is for System.setproperty
-        driver = new ChromeDriver();
+
+        driver = Driver.getDriver();
 
         driver.get("https://test.basqar.techno.study/");
         driver.manage().window().maximize();
@@ -40,7 +43,9 @@ public class _03_LoginBasqarStep {
     @Then("^User should login successfully$")
     public void user_should_login_successfully() {
 
-        driver.findElement(By.xpath("//span[text()='Dashboard']")).isDisplayed();
+        WebElement verifyLogin = driver.findElement(By.xpath("//span[text()='Dashboard']"));
+        Assert.assertNotNull(verifyLogin);
 
     }
+
 }
