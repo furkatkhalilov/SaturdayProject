@@ -1,5 +1,6 @@
 package StepDefinition;
 
+import PageObjectModel.LeftNavElements;
 import Utilities.Driver;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -13,6 +14,8 @@ public class _04_CountriesStep {
 
     WebDriver driver;
 
+    LeftNavElements leftNavElements = new LeftNavElements();
+
     @And("^Navigate to countries page$")
     public void navigate_to_countries_page(){
 
@@ -24,7 +27,7 @@ public class _04_CountriesStep {
             e.printStackTrace();
         }
 
-        driver.findElement(By.xpath("(//span[text()='Setup'])[1]")).click();
+        leftNavElements.Setup1Button.click();
 
     }
 
