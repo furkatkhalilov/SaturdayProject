@@ -19,15 +19,9 @@ public class _04_CountriesStep {
     @And("^Navigate to countries page$")
     public void navigate_to_countries_page(){
 
-        driver = Driver.getDriver();
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        leftNavElements.Setup1Button.click();
+        leftNavElements.findElementAndClickFunction("Setup1Button");
+        leftNavElements.findElementAndClickFunction("ParametersButton");
+        leftNavElements.findElementAndClickFunction("CountriesButton");
 
     }
 
