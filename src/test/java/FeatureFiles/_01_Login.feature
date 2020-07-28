@@ -8,8 +8,8 @@ Feature: Login Functionality
 
   Scenario: Login with valid username and password
 
-    Given Navigate to website
-    When Enter the username and password
-    Then User should login successfully
+#    Given Navigate to website
+#    When Enter the username and password
+#    Then User should login successfully
 
 
