@@ -1,5 +1,6 @@
 package StepDefinition;
 
+import PageObjectModel.DialogContent;
 import PageObjectModel.LeftNavElements;
 import Utilities.Driver;
 import cucumber.api.java.en.And;
@@ -15,6 +16,8 @@ public class _04_CountriesStep {
     WebDriver driver;
 
     LeftNavElements leftNavElements = new LeftNavElements();
+    DialogContent dialogContent = new DialogContent();
+
 
     @And("^Navigate to countries page$")
     public void navigate_to_countries_page(){
@@ -27,6 +30,10 @@ public class _04_CountriesStep {
 
     @When("^User create a country$")
     public void user_create_a_country(){
+
+        dialogContent.findElementAndClickFunction("AddButton");
+
+
 
     }
 

@@ -25,7 +25,20 @@ public class _01_ParentClass {
 
         waitUntilClickable(element);
         element.click();
+    }
 
+//    Send keys function
+    public void sendKeysFunction(WebElement element , String value){
+
+        waitUntilVisible(element);
+        element.clear();
+        element.sendKeys(value);
+    }
+
+//    Waiting until element become visible
+    public void waitUntilVisible(WebElement elementToWait){
+
+        wait.until(ExpectedConditions.visibilityOf(elementToWait));
     }
 
 
@@ -34,5 +47,7 @@ public class _01_ParentClass {
 
         wait.until(ExpectedConditions.elementToBeClickable(elmentToWait));
     }
+
+//
 
 }
