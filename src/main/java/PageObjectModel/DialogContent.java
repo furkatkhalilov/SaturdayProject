@@ -42,6 +42,7 @@ public class DialogContent extends _01_ParentClass{
 //      In this method we are going to sendKeys to element
         public void findElementAndSendKeysFunction(String ElementName , String value){
 
+//        Find the element in this class and send the element to sendKeysFunction
             switch (ElementName){
 
                 case "NameInput":
@@ -53,7 +54,7 @@ public class DialogContent extends _01_ParentClass{
             }
 
 //            Create a method in parentClass which is going to wait first and sendKeys
-
+            sendKeysFunction(myElement , value);
 
         }
 

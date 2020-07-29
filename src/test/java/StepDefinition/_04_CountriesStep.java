@@ -32,7 +32,8 @@ public class _04_CountriesStep {
     public void user_create_a_country(){
 
         dialogContent.findElementAndClickFunction("AddButton");
-
+        dialogContent.findElementAndSendKeysFunction("NameInput" , "AliCountry");
+        dialogContent.findElementAndSendKeysFunction("CodeInput" , "a1");
 
 
     }
