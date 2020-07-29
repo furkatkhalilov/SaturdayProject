@@ -38,6 +38,15 @@ public class _04_CountriesStep {
 
     }
 
+    @When("^User create a country name as \"([^\"]*)\" code as \"([^\"]*)\"$")
+    public void user_create_a_country_name_as_code_as(String name, String code)  {
+
+        dialogContent.findElementAndClickFunction("AddButton");
+        dialogContent.findElementAndSendKeysFunction("NameInput" , name);
+        dialogContent.findElementAndSendKeysFunction("CodeInput" , code);
+        dialogContent.findElementAndClickFunction("SaveButton");
+    }
+
     @Then("^Success message should be displayed$")
     public void success_message_should_be_displayed() {
         dialogContent.findElementAndVerifyElementContainText("SuccessfullyMessage" , "successfully");

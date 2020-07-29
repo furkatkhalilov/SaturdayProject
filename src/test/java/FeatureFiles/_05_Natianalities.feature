@@ -9,4 +9,3 @@ Feature: Nationalities functionality
     When User create a Nationalities
     Then Success message should be displayed
 
-    
