@@ -39,7 +39,7 @@ public class DialogContent extends _01_ParentClass{
             case "AddButton":
                 myElement = AddButton;
                 break;
-            case "saveButton":
+            case "SaveButton":
                 myElement = SaveButton;
                 break;
 
@@ -65,6 +65,20 @@ public class DialogContent extends _01_ParentClass{
 
         }
 
+//      Create one method finding the element
+        public void findElementAndVerifyElementContainText(String elementName , String WhichText){
 
+            switch (elementName){
+
+                case "SuccessfullyMessage":
+                    myElement=SuccessfullyMessage;
+                    break;
+
+            }
+
+//            Creating one method in parent class which is get the element and it is containing the WhichText(parameter)
+
+            ElementContainsText(myElement , WhichText);
+        }
 
 }

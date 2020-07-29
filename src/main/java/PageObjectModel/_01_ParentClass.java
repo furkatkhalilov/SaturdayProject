@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 
 public class _01_ParentClass {
 
@@ -33,6 +35,7 @@ public class _01_ParentClass {
         waitUntilVisible(element);
         element.clear();
         element.sendKeys(value);
+
     }
 
 //    Waiting until element become visible
@@ -48,6 +51,11 @@ public class _01_ParentClass {
         wait.until(ExpectedConditions.elementToBeClickable(elmentToWait));
     }
 
-//
+//  Verify element is contains specific text
+    public void ElementContainsText(WebElement element , String myText){
+
+        waitUntilVisible(element);
+        Assert.assertTrue(element.getText().contains(myText));
+    }
 
 }
