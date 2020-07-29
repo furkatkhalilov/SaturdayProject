@@ -51,6 +51,7 @@ public class DialogContent extends _01_ParentClass{
                 case "CodeInput":
                     myElement = CodeInput;
                     break;
+
             }
 
 //            Create a method in parentClass which is going to wait first and sendKeys
