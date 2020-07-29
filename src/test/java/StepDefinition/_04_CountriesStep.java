@@ -34,12 +34,13 @@ public class _04_CountriesStep {
         dialogContent.findElementAndClickFunction("AddButton");
         dialogContent.findElementAndSendKeysFunction("NameInput" , "AliCountry");
         dialogContent.findElementAndSendKeysFunction("CodeInput" , "a1");
-        
+        dialogContent.findElementAndClickFunction("saveButton");
 
     }
 
     @Then("^Success message should be displayed$")
     public void success_message_should_be_displayed() {
+
 
     }
 }

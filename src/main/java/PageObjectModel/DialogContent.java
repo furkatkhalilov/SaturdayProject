@@ -22,6 +22,12 @@ public class DialogContent extends _01_ParentClass{
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']/input")
     private WebElement CodeInput;
 
+    @FindBy(css = "ms-save-button>button")
+    private WebElement SaveButton;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    private WebElement SuccessfullyMessage;
+
 
     WebElement myElement;
 
@@ -32,6 +38,9 @@ public class DialogContent extends _01_ParentClass{
 
             case "AddButton":
                 myElement = AddButton;
+                break;
+            case "saveButton":
+                myElement = SaveButton;
                 break;
 
         }
@@ -44,19 +53,18 @@ public class DialogContent extends _01_ParentClass{
 
 //        Find the element in this class and send the element to sendKeysFunction
             switch (ElementName){
-
                 case "NameInput":
                     myElement = NameInput;
                     break;
                 case "CodeInput":
                     myElement = CodeInput;
                     break;
-
             }
-
 //            Create a method in parentClass which is going to wait first and sendKeys
             sendKeysFunction(myElement , value);
 
         }
+
+
 
 }
