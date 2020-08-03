@@ -37,11 +37,10 @@ public class LeftNavElements extends _01_ParentClass{
     @FindBy(xpath = "//span[text()='Nationalities']")
     private WebElement Nationalities;
 
-
     /*
         We can create couple methods which is finding the element in the class
 
-             And calling the method from the parent class.
+           And calling the method from the parent class.
 
      */
 
@@ -63,7 +62,6 @@ public class LeftNavElements extends _01_ParentClass{
             case "Nationalities":
                 myElement =Nationalities;
                 break;
-
         }
 
 //    Call the method from the parent class.

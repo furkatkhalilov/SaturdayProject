@@ -27,6 +27,7 @@ public class _01_ParentClass {
 
         waitUntilClickable(element);
         element.click();
+
     }
 
 //    Send keys function

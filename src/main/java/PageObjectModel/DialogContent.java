@@ -28,7 +28,6 @@ public class DialogContent extends _01_ParentClass{
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement SuccessfullyMessage;
 
-
     WebElement myElement;
 
 //    In this method we are going to click on the element.
@@ -42,7 +41,6 @@ public class DialogContent extends _01_ParentClass{
             case "SaveButton":
                 myElement = SaveButton;
                 break;
-
         }
 
         clickFunction(myElement);

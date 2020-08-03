@@ -45,10 +45,13 @@ public class _04_CountriesStep {
         dialogContent.findElementAndSendKeysFunction("NameInput" , name);
         dialogContent.findElementAndSendKeysFunction("CodeInput" , code);
         dialogContent.findElementAndClickFunction("SaveButton");
+
     }
 
     @Then("^Success message should be displayed$")
     public void success_message_should_be_displayed() {
+
         dialogContent.findElementAndVerifyElementContainText("SuccessfullyMessage" , "successfully");
+
     }
 }
