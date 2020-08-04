@@ -43,6 +43,7 @@ public class _01_ParentClass {
     public void waitUntilVisible(WebElement elementToWait){
 
         wait.until(ExpectedConditions.visibilityOf(elementToWait));
+
     }
 
 

@@ -98,9 +98,18 @@ public class DialogContent extends _01_ParentClass{
             ElementContainsText(myElement , WhichText);
         }
 
-        public void editFunction(String nameCountry){
+        public void editFunction(String nameCountry)  {
 
 //          Which country we already created
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println(nameList.size());
+            System.out.println(editButtonList.size());
 
             for(int i =0; i<nameList.size() ;i++){
 
