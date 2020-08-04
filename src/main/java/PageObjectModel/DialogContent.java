@@ -96,31 +96,25 @@ public class DialogContent extends _01_ParentClass{
 //            Creating one method in parent class which is get the element and it is containing the WhichText(parameter)
 
             ElementContainsText(myElement , WhichText);
+
         }
 
+        /*
+            This method is going to click on edit button according to names.
+
+         */
         public void editFunction(String nameCountry)  {
 
-//          Which country we already created
+            waiting(1000);
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
-            System.out.println(nameList.size());
-            System.out.println(editButtonList.size());
 
             for(int i =0; i<nameList.size() ;i++){
-
                 if(nameList.get(i).getText().equals(nameCountry)){
-
-                    editButtonList.get(i).click();
+                    clickFunction(editButtonList.get(i));
 
                 }
-
             }
-
         }
 
 }
