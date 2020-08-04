@@ -46,6 +46,10 @@ public class DialogContent extends _01_ParentClass{
     })
     private List<WebElement> editButtonList;
 
+    @FindAll({
+            @FindBy(css = "ms-delete-button>button")
+    })
+    private List<WebElement> deleteButton;
 
     WebElement myElement;
 
