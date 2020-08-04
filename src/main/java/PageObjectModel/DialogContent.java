@@ -2,8 +2,11 @@ package PageObjectModel;
 
 import Utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class DialogContent extends _01_ParentClass{
 
@@ -27,6 +30,22 @@ public class DialogContent extends _01_ParentClass{
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement SuccessfullyMessage;
+
+//    //table/tbody/tr/td[2]
+//        tr is a row of the table and td is a colomn of the table
+//         //table/tbody/tr[5]/td[2] row 5 column 2
+
+
+    @FindAll({
+           @FindBy(xpath = "//table/tbody/tr/td[2]")
+    })
+    private List<WebElement> nameList;
+
+    @FindAll({
+            @FindBy(xpath = "//ms-edit-button/button")
+    })
+    private List<WebElement> editButtonList;
+
 
     WebElement myElement;
 
@@ -79,4 +98,49 @@ public class DialogContent extends _01_ParentClass{
             ElementContainsText(myElement , WhichText);
         }
 
+        public void editFunction(String nameCountry){
+
+//          Which country we already created
+
+            for(int i =0; i<nameList.size() ;i++){
+
+                if(nameList.get(i).getText().equals(nameCountry)){
+
+                    editButtonList.get(i).click();
+
+                }
+
+            }
+
+        }
+
 }
+
+
+ /*
+        Find All vs Find by
+
+            With a find all we can use multiple locators
+
+        As like as ::
+
+            @FindAll({
+               @FindBy(xpath = "//table/tbody/tr/td[2]"),
+               @FindBy(xpath = "//table/tbody/tr/td[3]")
+        })
+       private List<WebElement> nameList;
+
+          @FindBy(xpath = "//table/tbody/tr/td[2]")
+            private List<WebElement> nameList2;
+
+
+
+
+    so you are saying nameList and nameList2 are the same.
+        it means FindBy doesnt return the first occurence but returns all occurences ?
+
+         @FindBy(xpath = "//table/tbody/tr/td[2]")
+            private WebElement nameList;
+
+
+     */
