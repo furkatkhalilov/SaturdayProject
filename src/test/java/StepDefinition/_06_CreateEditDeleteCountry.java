@@ -11,13 +11,16 @@ public class _06_CreateEditDeleteCountry {
     @When("^User edit the \"([^\"]*)\" to \"([^\"]*)\"$")
     public void user_edit_the_to(String nameOfCountryBeforeEdit, String nameOfCountryAfterEdit){
 
-        dialogContent.editFunction(nameOfCountryBeforeEdit);
+        dialogContent.editAndDeleteFunction(nameOfCountryBeforeEdit , "edit");
         dialogContent.findElementAndSendKeysFunction("NameInput" , nameOfCountryAfterEdit);
         dialogContent.findElementAndClickFunction("SaveButton");
     }
 
     @When("^User delete the \"([^\"]*)\"$")
     public void user_delete_the(String nameOfCountryToDelete){
+
+        dialogContent.editAndDeleteFunction(nameOfCountryToDelete , "delete");
+        dialogContent.findElementAndClickFunction("yesButton");
 
     }
 

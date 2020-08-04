@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DialogContent extends _01_ParentClass{
@@ -30,6 +31,9 @@ public class DialogContent extends _01_ParentClass{
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement SuccessfullyMessage;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement yesButton;
 
 //    //table/tbody/tr/td[2]
 //        tr is a row of the table and td is a colomn of the table
@@ -64,6 +68,10 @@ public class DialogContent extends _01_ParentClass{
             case "SaveButton":
                 myElement = SaveButton;
                 break;
+            case "yesButton":
+                myElement = yesButton;
+                break;
+
         }
 
         clickFunction(myElement);
@@ -105,22 +113,27 @@ public class DialogContent extends _01_ParentClass{
 
         /*
             This method is going to click on edit button according to names.
-
          */
-        public void editFunction(String nameCountry)  {
+        public void editAndDeleteFunction(String nameCountry , String editOrDelete)  {
 
             waiting(1000);
 
+            List<WebElement> whichList = new ArrayList<>();
 
+//        With this if else statement we are able to handle edit and delete functionality together.
+            if(editOrDelete.equalsIgnoreCase("edit")){
+                whichList=editButtonList;
+            }else{
+                whichList=deleteButton;
+            }
 
             for(int i =0; i<nameList.size() ;i++){
                 if(nameList.get(i).getText().equals(nameCountry)){
-                    clickFunction(editButtonList.get(i));
+                    clickFunction(whichList.get(i));
 
                 }
             }
         }
-
 }
 
 

@@ -24,3 +24,5 @@ Feature: Countries functionality
       And Navigate to countries page
       When User delete the "AliEditedCountry"
       Then Success message should be displayed
+
+
