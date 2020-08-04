@@ -26,6 +26,12 @@ public class DialogContent extends _01_ParentClass{
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']/input")
     private WebElement CodeInput;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='priority']/input")
+    private WebElement PriorityInput;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']/input")
+    private WebElement IntegrationCode;
+
     @FindBy(css = "ms-save-button>button")
     private WebElement SaveButton;
 
@@ -88,6 +94,13 @@ public class DialogContent extends _01_ParentClass{
                 case "CodeInput":
                     myElement = CodeInput;
                     break;
+                case "IntegrationCode":
+                    myElement = IntegrationCode;
+                    break;
+                case "PriorityInput":
+                    myElement = PriorityInput;
+                    break;
+
             }
 //            Create a method in parentClass which is going to wait first and sendKeys
             sendKeysFunction(myElement , value);
