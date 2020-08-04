@@ -14,6 +14,7 @@ public class _06_CreateEditDeleteCountry {
         dialogContent.editAndDeleteFunction(nameOfCountryBeforeEdit , "edit");
         dialogContent.findElementAndSendKeysFunction("NameInput" , nameOfCountryAfterEdit);
         dialogContent.findElementAndClickFunction("SaveButton");
+
     }
 
     @When("^User delete the \"([^\"]*)\"$")
