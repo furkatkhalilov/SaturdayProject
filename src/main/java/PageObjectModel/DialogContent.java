@@ -54,7 +54,6 @@ public class DialogContent extends _01_ParentClass{
 //        tr is a row of the table and td is a colomn of the table
 //         //table/tbody/tr[5]/td[2] row 5 column 2
 
-
     @FindAll({
            @FindBy(xpath = "//table/tbody/tr/td[2]")
     })
