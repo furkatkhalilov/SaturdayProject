@@ -6,7 +6,7 @@ Feature: Citizenship with scenario outline
 #   Scenario outline is running the code with multiple data
 
 
-  Scenario: Negative scenario
+  Scenario: Some Scenario
 
     Given Navigate to basqar
     When Enter the username and password and click on login button
