@@ -32,6 +32,15 @@ public class DialogContent extends _01_ParentClass{
     @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']/input")
     private WebElement shortNameInput;
 
+    @FindBy(xpath = "//input[@class='mat-autocomplete-trigger mat-chip-input mat-input-element']")
+    private WebElement UserTypeDropdown;
+
+        @FindBy(xpath = " (//span[@class='mat-option-text'][text()=' Everyone '])[1]")
+        private WebElement everyoneUserOption;
+
+        @FindBy(xpath = "//span[@class='mat-option-text']")
+        private List<WebElement> userTypeAllOptions;
+
     @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']/input")
     private WebElement IntegrationCode;
 
@@ -87,6 +96,12 @@ public class DialogContent extends _01_ParentClass{
                 break;
             case "closeDialog":
                 myElement = closeDialog;
+                break;
+            case "UserTypeDropdown":
+                myElement = UserTypeDropdown;
+                break;
+            case "everyoneUserOption":
+                myElement = everyoneUserOption;
                 break;
 
 
@@ -165,6 +180,20 @@ public class DialogContent extends _01_ParentClass{
 
                 }
             }
+        }
+
+        public void clickOnElementInTheDropdown(String whichOption){
+
+           for(int i = 0 ; i<userTypeAllOptions.size() ; i++){
+
+               if(userTypeAllOptions.get(i).getText().contains(whichOption)){
+
+                   userTypeAllOptions.get(i).click();
+                   break;
+               }
+
+           }
+
         }
 }
 

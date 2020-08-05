@@ -28,6 +28,9 @@ public class LeftNavElements extends _01_ParentClass{
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     private WebElement Setup1Button;
 
+    @FindBy(xpath = "//span[@class='nav-link-title ng-tns-c102-29 ng-star-inserted']")
+    private WebElement setupButtonUnderInventory;
+
     @FindBy(xpath = "//span[text()='Parameters']")
     private WebElement ParametersButton;
 
@@ -42,6 +45,12 @@ public class LeftNavElements extends _01_ParentClass{
 
     @FindBy(xpath = "//span[text()='Citizenships']")
     private WebElement Citizenships;
+
+    @FindBy(xpath = "//span[text()='Inventory']")
+    private WebElement Inventory;
+
+    @FindBy(xpath = "//span[text()='Item Categories']")
+    private WebElement ItemCategory;
 
     /*
         We can create couple methods which is finding the element in the class
@@ -73,6 +82,15 @@ public class LeftNavElements extends _01_ParentClass{
                 break;
             case "Citizenships":
                 myElement =Citizenships;
+                break;
+            case "setupButtonUnderInventory":
+                myElement =setupButtonUnderInventory;
+                break;
+            case "ItemCategory":
+                myElement =ItemCategory;
+                break;
+            case "Inventory":
+                myElement =Inventory;
                 break;
 
         }
