@@ -29,6 +29,9 @@ public class DialogContent extends _01_ParentClass{
     @FindBy(xpath = "//ms-text-field[@formcontrolname='priority']/input")
     private WebElement PriorityInput;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']/input")
+    private WebElement shortNameInput;
+
     @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']/input")
     private WebElement IntegrationCode;
 
@@ -37,6 +40,12 @@ public class DialogContent extends _01_ParentClass{
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement SuccessfullyMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'Error')]")
+    private WebElement ErrorMessage;
+
+    @FindBy(xpath = "//button[@aria-label='Close dialog']")
+    private WebElement closeDialog;
 
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement yesButton;
@@ -77,6 +86,11 @@ public class DialogContent extends _01_ParentClass{
             case "yesButton":
                 myElement = yesButton;
                 break;
+            case "closeDialog":
+                myElement = closeDialog;
+                break;
+
+
 
         }
 
@@ -100,6 +114,9 @@ public class DialogContent extends _01_ParentClass{
                 case "PriorityInput":
                     myElement = PriorityInput;
                     break;
+                case "shortNameInput":
+                    myElement = shortNameInput;
+                    break;
 
             }
 //            Create a method in parentClass which is going to wait first and sendKeys
@@ -114,6 +131,9 @@ public class DialogContent extends _01_ParentClass{
 
                 case "SuccessfullyMessage":
                     myElement=SuccessfullyMessage;
+                    break;
+                case "ErrorMessage":
+                    myElement=ErrorMessage;
                     break;
 
             }

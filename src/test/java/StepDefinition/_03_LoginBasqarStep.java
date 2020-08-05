@@ -35,7 +35,7 @@ public class _03_LoginBasqarStep {
     public void enter_the_username_and_password_and_click_on_login_button(){
 
         driver.findElement(By.id("mat-input-0")).sendKeys("daulet2030@gmail.com");
-        driver.findElement(By.id("mat-input-1")).sendKeys("DV@d9FjCm5hXeNFv");
+        driver.findElement(By.id("mat-input-1")).sendKeys("TechnoStudy123@");
 
         driver.findElement(By.cssSelector("button[aria-label='LOGIN']")).click();
 
