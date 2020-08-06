@@ -49,7 +49,7 @@ public class Driver {
 
         if(driver!=null){
             driver.quit();
-            driver=null; // if we dont type this line next scenario will fail
+            driver=null; // if we dont type this line next scenario will fail error is NoSuchSessionException
         }
     }
 
