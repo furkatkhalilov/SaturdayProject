@@ -25,3 +25,16 @@ Feature: Fees functionality
     When User delete the "AliEditedFees"
     Then Success message should be displayed
 
+
+#    driver.quit
+#    Scenario outline example
+#    Data table
+
+
+#   driver.quit() vs diver.close()
+#     Quit is closing the all browser
+#     Close is closing the current page
+
+
+
+

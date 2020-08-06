@@ -18,7 +18,6 @@ public class _07_Fees {
         leftNavElements.findElementAndClickFunction("ParametersButton");
         leftNavElements.findElementAndClickFunction("Fees");
 
-
     }
 
     @When("^User create a country name as \"([^\"]*)\" code as \"([^\"]*)\" integration code as \"([^\"]*)\" priority as \"([^\"]*)\"$")
