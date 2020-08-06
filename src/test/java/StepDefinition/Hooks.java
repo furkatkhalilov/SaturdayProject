@@ -1,5 +1,6 @@
 package StepDefinition;
 
+import Utilities.Driver;
 import cucumber.api.java.After;
 
 public class Hooks {
@@ -8,8 +9,9 @@ public class Hooks {
 //      We should import it from cucumber.api.java
     @After
     public void after(){
-
         
+        Driver.QuitDriver();
+
     }
 
 }
