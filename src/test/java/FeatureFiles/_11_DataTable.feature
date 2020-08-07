@@ -19,8 +19,7 @@ Feature: Fees functionality
       | SaveButton |
 
     Then Success message should be displayed
-
-
+ 
   Scenario: Create a Country
 
     Given Navigate to basqar
@@ -35,6 +34,7 @@ Feature: Fees functionality
     And Click on the element in the dialog content class
       | SaveButton |
     Then Success message should be displayed
+
 
     Scenario: Create a Nationalities
 
