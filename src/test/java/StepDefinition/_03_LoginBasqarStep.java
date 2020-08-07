@@ -23,7 +23,6 @@ public class _03_LoginBasqarStep {
             Set property - open browser and navigate to website
          */
 
-
         driver = Driver.getDriver();
 
         driver.get("https://test.basqar.techno.study/");

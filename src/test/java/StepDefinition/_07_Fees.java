@@ -54,7 +54,7 @@ public class _07_Fees {
     }
 
     @And("^Click on the element in the dialog content class$")
-    public void click_on_the_element_in_the_dialog_content_class(DataTable elementName) throws Throwable {
+    public void click_on_the_element_in_the_dialog_content_class(DataTable elementName){
 
             List<String> elementsToClick = elementName.asList(String.class);
 

@@ -14,9 +14,12 @@ Feature: Fees functionality
       | CodeInput       | 123     |
       | IntegrationCode | 123     |
       | PriorityInput   | 123     |
+
     And Click on the element in the dialog content class
       | SaveButton |
+
     Then Success message should be displayed
+
 
   Scenario: Create a Country
 
@@ -33,8 +36,19 @@ Feature: Fees functionality
       | SaveButton |
     Then Success message should be displayed
 
+    Scenario: Create a Nationalities
 
-
+      Given Navigate to basqar
+      When Enter the username and password and click on login button
+      Then User should login successfully
+      And Navigate to Nationalities page
+      And Click on the element in the dialog content class
+        | AddButton |
+      When User sending the keys in the dialog content class
+        | NameInput | AliCountryMine |
+      And Click on the element in the dialog content class
+        | SaveButton |
+      Then Success message should be displayed
 
 
 #  Data table vs Scenario outline
