@@ -1,5 +1,6 @@
 Feature: Fees functionality
 
+
   Scenario: Create a Fees
 
     Given Navigate to basqar
@@ -43,6 +44,7 @@ Feature: Fees functionality
 #     Error message should be displayed
 #     delete both of the fees.
 
+
   Scenario: Edit multiple fees
     Given Navigate to basqar
     When Enter the username and password and click on login button
@@ -61,6 +63,37 @@ Feature: Fees functionality
     Then Success message should be displayed
     When User delete the "AliEditedFees"
     Then Success message should be displayed
+
+
+#    Change the Scenario: Edit multiple fees to Scenario outline
+
+#     Scenario vs Scenario outline
+
+#     With a scenario outline we are able to run our code with multiple data
+
+  Scenario Outline:Edit multiple fees in Scenario outline
+
+    Given Navigate to basqar
+    When Enter the username and password and click on login button
+    Then User should login successfully
+    And Navigate to Fees page
+    When User create a country name as "<FeeName1>" code as "<FeeCode1>" integration code as "<FeeIntegration1>" priority as "<FeePriority1>"
+    Then Success message should be displayed
+    When User edit the "<FeeName1>" to "<FeeNameEditted1>"
+    Then Success message should be displayed
+    When User create a country name as "<FeeName2>" code as "<FeeCode2>" integration code as "<FeeIntegration2>" priority as "<FeePriority2>"
+    Then Success message should be displayed
+    When User edit the "<FeeName2>" to "<FeeNameEditted1>"
+    Then Error message should be displayed
+    And Click on close button
+    When User delete the "<FeeNameEditted1>"
+    Then Success message should be displayed
+    When User delete the "<FeeName2>"
+    Then Success message should be displayed
+    Examples:
+      | FeeName1 | FeeCode1 | FeeIntegration1 | FeePriority1 | FeeNameEditted1 | FeeName2   | FeeCode2 | FeeIntegration2 | FeePriority2 |
+      | AliName  | 123      | 123             | 123          | AliNameEditted  | FurkatName | 1234     | 1234            | 1234         |
+      | doganFee | 123      | 123             | 123          | DoganEditted    | EkremFee   | 1234     | 1234            | 1234         |
 
 
 
