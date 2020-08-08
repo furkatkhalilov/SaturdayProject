@@ -23,6 +23,9 @@ public class FormsClass extends _01_ParentClass{
         @FindBy(xpath = "(//mat-option)[3]")
         private WebElement Option3;
 
+        @FindBy(xpath = "(//mat-option)[4]")
+        private WebElement Option4;
+
     @FindBy(xpath = "//mat-select[@aria-label='Grade Level']")
     private WebElement gradeLevel;
 
@@ -46,6 +49,9 @@ public class FormsClass extends _01_ParentClass{
                 break;
             case "Option3":
                 myElement =Option3;
+                break;
+            case "Option4":
+                myElement =Option4;
                 break;
             case "gradeLevel":
                 myElement =gradeLevel;

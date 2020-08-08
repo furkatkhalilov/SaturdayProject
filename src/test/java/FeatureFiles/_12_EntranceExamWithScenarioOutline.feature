@@ -13,6 +13,7 @@ Feature: Entrance Examinations functionality
       | AddButton |
     When User sending the keys in the dialog content class
       | NameInput | <ExamName> |
+
     And Click in the formsClass class
       | academicPeriod         |
       | <AcademicPeriodOption> |
@@ -32,10 +33,11 @@ Feature: Entrance Examinations functionality
 
     Examples:
       | ExamName    | AcademicPeriodOption | GradeLevelOption | documentTypeOption |
+      | Math exam   | Option2              | Option4          | Option4            |
       | IT exam     | Option1              | Option1          | Option1            |
       | Oracle exam | Option2              | Option2          | Option2            |
       | Math exam   | Option1              | Option3          | Option3            |
 
-
+#    AcademicPeriodOption click on 2 grade level click on 4 th option documentTypeOption4 th option
 
 #    try catch... if no such element exeption, then click random on the other element?
