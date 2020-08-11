@@ -10,7 +10,7 @@ public class Hooks {
     @After
     public void after(){
 
-//        Driver.QuitDriver();
+        Driver.QuitDriver();
 
         System.out.println("This is the after class");
     }

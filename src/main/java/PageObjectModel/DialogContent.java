@@ -17,7 +17,7 @@ public class DialogContent extends _01_ParentClass{
 
     }
 
-    @FindBy(xpath = "//ms-add-button//button")
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
     private WebElement AddButton;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input")
