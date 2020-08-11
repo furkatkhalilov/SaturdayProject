@@ -84,7 +84,6 @@ public class DialogContent extends _01_ParentClass{
     public void findElementAndClickFunction(String ElementName){
 
         switch (ElementName){
-
             case "AddButton":
                 myElement = AddButton;
                 break;
@@ -142,7 +141,6 @@ public class DialogContent extends _01_ParentClass{
         public void findElementAndVerifyElementContainText(String elementName , String WhichText){
 
             switch (elementName){
-
                 case "SuccessfullyMessage":
                     myElement=SuccessfullyMessage;
                     break;

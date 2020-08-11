@@ -39,10 +39,9 @@ public class Driver {
     }
 
 
+
     /*
         We are going to call this method after each scenario.
-
-
 
      */
     public static void QuitDriver(){

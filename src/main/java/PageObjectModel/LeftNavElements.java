@@ -62,6 +62,7 @@ public class LeftNavElements extends _01_ParentClass{
     private WebElement EntranceExamsChild;
 
 
+
     /*
         We can create couple methods which is finding the element in the class
 
