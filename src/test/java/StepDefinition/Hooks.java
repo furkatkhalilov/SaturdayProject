@@ -12,6 +12,7 @@ public class Hooks {
 
 //        Driver.QuitDriver();
 
+        System.out.println("This is the after class");
     }
 
 }
