@@ -1,6 +1,7 @@
 Feature: Nationalities functionality
 
-  @SmokeTest
+#  I would like to run one scenario with multiple tags
+  @SmokeTest @RegressionTest
   Scenario: Create a Nationalities
 
     Given Navigate to basqar

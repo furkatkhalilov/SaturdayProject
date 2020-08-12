@@ -27,3 +27,15 @@ public class _02_SmokeTestRunnerWithTag extends AbstractTestNGCucumberTests {
             Create a regression runner and add entrance exam scenario 1 , citizenship scenario 1 , 2 , 3
 
      */
+
+    /*
+           Smoke test vs Regression test
+
+                Smoke test: Is running daily and making sure application is working as expected.
+                        Application is up and running.
+
+                Regression test: Is running before every release. It is making sure every functionality
+                        is working as expected.
+
+            
+     */
