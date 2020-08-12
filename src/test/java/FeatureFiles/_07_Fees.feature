@@ -1,13 +1,14 @@
 Feature: Fees functionality
 
-
+#    These tags are coming from the runner class and runner is finding which scenario to run with these tags
+  @SmokeTest
   Scenario: Create a Fees
 
     Given Navigate to basqar
     When Enter the username and password and click on login button
     Then User should login successfully
     And Navigate to Fees page
-    When User create a country name as "AliFees" code as "myCode" integration code as "123" priority as "10"
+    When User create a country name as "AliFees" code as "myCode" integration code as "1234" priority as "09"
     Then Success message should be displayed
 
   Scenario: Edit a Fees
@@ -18,7 +19,8 @@ Feature: Fees functionality
     When User edit the "AliFees" to "AliEditedFees"
     Then Success message should be displayed
 
-  Scenario: Delete a Fees
+  @SmokeTest
+  Scenario: aaDelete a Fees
     Given Navigate to basqar
     When Enter the username and password and click on login button
     Then User should login successfully

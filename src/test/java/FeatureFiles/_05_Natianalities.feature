@@ -1,5 +1,6 @@
 Feature: Nationalities functionality
 
+  @SmokeTest
   Scenario: Create a Nationalities
 
     Given Navigate to basqar
