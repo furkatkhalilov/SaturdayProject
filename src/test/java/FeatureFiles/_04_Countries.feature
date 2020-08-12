@@ -6,7 +6,6 @@ Feature: Countries functionality
     Then User should login successfully
     And Navigate to countries page
 
-    
   Scenario: Create a country
 
     When User create a country

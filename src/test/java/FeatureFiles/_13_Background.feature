@@ -28,16 +28,7 @@ Feature: Contact functionality
     When User delete the contact
     Then Contact should be delete
 
-
-
-
-
-
-
-
-
-
-#  Background
-#  Runner
+#  Background Done
+#  Runner helping us to run multiple feature files and scenarious
 #  tags
 #  report
