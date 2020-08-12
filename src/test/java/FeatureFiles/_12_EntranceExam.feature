@@ -1,5 +1,6 @@
 Feature: Entrance Examinations functionality
 
+  @RegressionTest
   Scenario: Create exam
 
     Given Navigate to basqar

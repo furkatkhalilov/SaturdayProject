@@ -3,6 +3,7 @@
 
 Feature: Citizenship functionality
 
+  @RegressionTest
   Scenario: Create a Citizenship
 
     Given Navigate to basqar
@@ -12,6 +13,7 @@ Feature: Citizenship functionality
     When User create a Citizenship name as "AliCitizenship" short name as "AC"
     Then Success message should be displayed
 
+  @RegressionTest
   Scenario: Edit a Citizenship
 
     Given Navigate to basqar
@@ -21,6 +23,7 @@ Feature: Citizenship functionality
     When User edit the "AliCitizenship" to "AliEditedCitizenship"
     Then Success message should be displayed
 
+  @RegressionTest
   Scenario: Delete a Citizenship
 
     Given Navigate to basqar

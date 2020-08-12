@@ -35,7 +35,6 @@ Feature: Fees functionality
       | SaveButton |
     Then Success message should be displayed
 
-
     Scenario: Create a Nationalities
 
       Given Navigate to basqar

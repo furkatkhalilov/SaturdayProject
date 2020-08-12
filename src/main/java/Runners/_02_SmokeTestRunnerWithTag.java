@@ -10,7 +10,6 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
 
-
 //      These tags are coming from the runner class and runner is finding which scenario to run with these tags
         tags = {"@SmokeTest"},
         features={"src/test/java/FeatureFiles"}, //the location of feature files.
@@ -21,3 +20,10 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 public class _02_SmokeTestRunnerWithTag extends AbstractTestNGCucumberTests {
 }
+
+
+    /*
+        Task 1:
+            Create a regression runner and add entrance exam scenario 1 , citizenship scenario 1 , 2 , 3
+
+     */
