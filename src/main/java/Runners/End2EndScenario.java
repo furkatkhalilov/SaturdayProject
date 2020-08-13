@@ -21,7 +21,7 @@ import java.io.File;
 
         plugin = {
           "html:target/cucumber-Html-Report",
-          "com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportEnd2End.html"
+          "com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportEnd2End.html" // to generate a extend report we need this plugin
         },
         tags = {"@E2E"},
         features = {"src/test/java/FeatureFiles"},
@@ -32,6 +32,7 @@ import java.io.File;
 
 public class End2EndScenario extends AbstractTestNGCucumberTests {
 
+//        After runner is done this after method will run and put username application name information in the report.
         @AfterClass
         public static void afterClass(){
 
@@ -46,3 +47,13 @@ public class End2EndScenario extends AbstractTestNGCucumberTests {
         }
 
 }
+
+        /*
+                What kind of report do you use in your project?
+                        I am using extend report in my current project.
+                              In this report I have a chart it is showing me how many features
+                                how many scenarios and steps I ran in that runner.
+
+                         If I have a fails then it is showing as red so it is understandable for every one in the team
+
+         */
