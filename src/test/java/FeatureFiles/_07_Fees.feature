@@ -73,6 +73,7 @@ Feature: Fees functionality
 
 #     With a scenario outline we are able to run our code with multiple data
 
+  @E2E
   Scenario Outline:Edit multiple fees in Scenario outline
 
     Given Navigate to basqar
@@ -94,8 +95,8 @@ Feature: Fees functionality
     Then Success message should be displayed
     Examples:
       | FeeName1 | FeeCode1 | FeeIntegration1 | FeePriority1 | FeeNameEditted1 | FeeName2   | FeeCode2 | FeeIntegration2 | FeePriority2 |
-      | AliName  | 123      | 123             | 123          | AliNameEditted  | FurkatName | 1234     | 1234            | 1234         |
-      | doganFee | 123      | 123             | 123          | DoganEditted    | EkremFee   | 1234     | 1234            | 1234         |
+      | AliNameaa  | 123      | 123             | 123          | AliNameEditted  | FurkatName | 1234     | 1234            | 1234         |
+      | doganFeeaaa | 123      | 123             | 123          | DoganEditted    | EkremFee   | 1234     | 1234            | 1234         |
 
 
 

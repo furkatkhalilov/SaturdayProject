@@ -36,6 +36,4 @@ public class _02_SmokeTestRunnerWithTag extends AbstractTestNGCucumberTests {
 
                 Regression test: Is running before every release. It is making sure every functionality
                         is working as expected.
-
-            
      */
