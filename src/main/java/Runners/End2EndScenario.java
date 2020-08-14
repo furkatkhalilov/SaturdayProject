@@ -17,6 +17,12 @@ import org.testng.annotations.AfterClass;
 
 import java.io.File;
 
+/*
+        Added extend report
+        Screen shots
+
+ */
+
 @CucumberOptions(
 
         plugin = {
@@ -37,7 +43,6 @@ public class End2EndScenario extends AbstractTestNGCucumberTests {
         public static void afterClass(){
 
 //                Location of the xml file
-
                 Reporter.loadXMLConfig(new File("src/test/java/FeatureFiles/extentReport.xml"));
                 Reporter.setSystemInfo("User Name" , "Ali Koklu");
                 Reporter.setSystemInfo("Application Name", "Basqar");
@@ -45,7 +50,6 @@ public class End2EndScenario extends AbstractTestNGCucumberTests {
                 Reporter.setSystemInfo("Environment", "QA");
                 Reporter.setTestRunnerOutput("Test execution Cucumber report");
         }
-
 }
 
         /*
@@ -55,5 +59,5 @@ public class End2EndScenario extends AbstractTestNGCucumberTests {
                                 how many scenarios and steps I ran in that runner.
 
                          If I have a fails then it is showing as red so it is understandable for every one in the team
-
+                           After I run my regression or smoke I share with the team and they also aware of the result.
          */
