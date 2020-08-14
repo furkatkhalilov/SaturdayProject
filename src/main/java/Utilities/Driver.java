@@ -1,5 +1,6 @@
 package Utilities;
 
+import cucumber.api.java.After;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,6 +45,7 @@ public class Driver {
         We are going to call this method after each scenario.
 
      */
+
     public static void QuitDriver(){
 
         if(driver!=null){

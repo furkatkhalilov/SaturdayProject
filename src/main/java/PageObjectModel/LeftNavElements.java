@@ -61,6 +61,11 @@ public class LeftNavElements extends _01_ParentClass{
     @FindBy(xpath = "(//span[text()='Entrance Exams'])[2]")
     private WebElement EntranceExamsChild;
 
+    @FindBy(xpath = "//span[text()='Student']")
+    private WebElement StudentParent;
+
+    @FindBy(xpath = " //span[text()='Students']")
+    private WebElement StudentsButton;
 
 
     /*
@@ -111,6 +116,12 @@ public class LeftNavElements extends _01_ParentClass{
                 break;
             case "EntranceExamsParent":
                 myElement =EntranceExamsParent;
+                break;
+            case "StudentParent":
+                myElement =StudentParent;
+                break;
+            case "StudentsButton":
+                myElement =StudentsButton;
                 break;
 
         }

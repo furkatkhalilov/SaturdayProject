@@ -32,6 +32,18 @@ public class FormsClass extends _01_ParentClass{
     @FindBy(xpath = " //mat-select[@aria-label='Document Type']")
     private WebElement documentType;
 
+    @FindBy(css = "mat-select[formcontrolname='gender']")
+    private WebElement genderDropdown;
+
+    @FindBy(xpath = "//mat-select[@aria-label='School Department']")
+    private WebElement schoolDepartmentDropdown;
+
+    @FindBy(xpath = "//mat-select[@aria-label='Section']")
+    private WebElement sectionDropdown;
+
+    @FindBy(css = "mat-select[aria-label='Citizenship']")
+     private WebElement citizenshipDropdown;
+
     WebElement myElement;
 
     public void findElementAndClickFunction(String elementName){
@@ -59,6 +71,20 @@ public class FormsClass extends _01_ParentClass{
             case "documentType":
                 myElement =documentType;
                 break;
+            case "genderDropdown":
+                myElement =genderDropdown;
+                break;
+            case "schoolDepartmentDropdown":
+                myElement =schoolDepartmentDropdown;
+                break;
+            case "sectionDropdown":
+                myElement =sectionDropdown;
+                break;
+            case "citizenshipDropdown":
+                myElement =citizenshipDropdown;
+                break;
+
+
         }
 
         clickFunction(myElement);
@@ -67,3 +93,8 @@ public class FormsClass extends _01_ParentClass{
 
 
 }
+
+    /*
+        stale element reference
+
+     */

@@ -1,6 +1,7 @@
 package PageObjectModel;
 
 import Utilities.Driver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,6 +27,7 @@ public class _01_ParentClass {
     public void clickFunction(WebElement element){
 
         waitUntilClickable(element);
+        scrollToElement(element);
         element.click();
 
     }
@@ -68,5 +70,13 @@ public class _01_ParentClass {
              e.printStackTrace();
         }
     }
+
+    public void scrollToElement(WebElement elementToScroll){
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        js.executeScript("arguments[0].scrollIntoView();", elementToScroll);
+    }
+
 
 }
