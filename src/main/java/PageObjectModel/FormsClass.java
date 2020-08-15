@@ -44,6 +44,20 @@ public class FormsClass extends _01_ParentClass{
     @FindBy(css = "mat-select[aria-label='Citizenship']")
      private WebElement citizenshipDropdown;
 
+    @FindBy(xpath = "(//div[@class='mat-tab-label-content'])[2]")
+    private WebElement secondButtonInExtraInfo;
+
+    @FindBy(xpath = "//ms-add-button[@tooltip='GENERAL.BUTTON.ADD_REPRESENTATIVE']//button")
+    private WebElement addButtonForRepresantitive;
+
+    @FindBy(xpath = "//mat-select[@aria-label='Representative']")
+    private WebElement RepresentativeDropdown;
+
+    @FindBy(xpath = "//span[text()=' Add ']")
+    private WebElement popUpAddButton;
+
+
+
     WebElement myElement;
 
     public void findElementAndClickFunction(String elementName){
@@ -83,11 +97,70 @@ public class FormsClass extends _01_ParentClass{
             case "citizenshipDropdown":
                 myElement =citizenshipDropdown;
                 break;
-
+            case "secondButtonInExtraInfo":
+                myElement =secondButtonInExtraInfo;
+                break;
+            case "addButtonForRepresantitive":
+                myElement =addButtonForRepresantitive;
+                break;
+            case "RepresentativeDropdown":
+                myElement =RepresentativeDropdown;
+                break;
+            case "popUpAddButton":
+                myElement =popUpAddButton;
+                break;
 
         }
 
         clickFunction(myElement);
+
+    }
+
+    @FindBy(css = "ms-text-field[formcontrolname='firstName']>input")
+    private WebElement FirstNameInput;
+
+    @FindBy(css = "ms-text-field[formcontrolname='lastName']>input")
+    private WebElement LastNameInput;
+
+    @FindBy(css = "input[formcontrolname='documentNumber']")
+    private WebElement documentNumber;
+
+    @FindBy(css = "input[formcontrolname='firstName']")
+    private WebElement popUpFirstName;
+
+    @FindBy(css = "input[formcontrolname='lastName']")
+    private WebElement popUpLastName;
+
+    @FindBy(css = " input[formcontrolname='phone']")
+    private WebElement popUpPhoneNumber;
+
+
+    public void findElementAndSendKeysFunction(String ElementName , String value){
+
+        switch (ElementName){
+
+            case "FirstNameInput":
+                myElement = FirstNameInput;
+                break;
+
+            case "LastNameInput":
+                myElement = LastNameInput;
+                break;
+            case "documentNumber":
+                myElement = documentNumber;
+                break;
+            case "popUpFirstName":
+                myElement = popUpFirstName;
+                break;
+            case "popUpLastName":
+                myElement = popUpLastName;
+                break;
+            case "popUpPhoneNumber":
+                myElement = popUpPhoneNumber;
+                break;
+        }
+
+        sendKeysFunction(myElement ,value );
 
     }
 

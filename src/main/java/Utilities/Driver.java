@@ -27,10 +27,10 @@ public class Driver {
 
     private static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
 //        if the driver is == null then create a driver if not then give me current driver
-        if(driver==null){
+        if (driver == null) {
             WebDriverManager.chromedriver().setup(); // this line is for System.setproperty
             driver = new ChromeDriver();
         }
@@ -46,11 +46,11 @@ public class Driver {
 
      */
 
-    public static void QuitDriver(){
+    public static void QuitDriver() {
 
-        if(driver!=null){
+        if (driver != null) {
             driver.quit();
-            driver=null; // if we dont type this line next scenario will fail error is NoSuchSessionException
+            driver = null; // if we dont type this line next scenario will fail error is NoSuchSessionException
         }
     }
 

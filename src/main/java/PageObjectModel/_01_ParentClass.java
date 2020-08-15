@@ -36,6 +36,7 @@ public class _01_ParentClass {
     public void sendKeysFunction(WebElement element , String value){
 
         waitUntilVisible(element);
+        scrollToElement(element);
         element.clear();
         element.sendKeys(value);
 

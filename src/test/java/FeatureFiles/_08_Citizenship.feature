@@ -43,7 +43,7 @@ Feature: Citizenship functionality
     When User create a Citizenship name as "AliCitizenship" short name as "AC"
     Then Success message should be displayed
     When User create a Citizenship name as "AliCitizenship" short name as "AC"
-    But Error message should be displayed
+    And Error message should be displayed
     And Click on close button
     When User delete the "AliCitizenship"
     Then Success message should be displayed

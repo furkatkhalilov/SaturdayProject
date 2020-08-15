@@ -3,6 +3,7 @@ package StepDefinition;
 import Utilities.Driver;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,6 +14,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Hooks {
+
+    @Before
+    public void before(){
+//        Add the navigate to website enter username and password
+
+    }
+
+    /*
+        Before
+
+
+     */
 
 //    This after annotation will run the code after each scenario
 //      We should import it from cucumber.api.java
@@ -49,6 +62,12 @@ public class Hooks {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
 //        Driver.QuitDriver();

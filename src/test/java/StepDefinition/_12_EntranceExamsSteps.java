@@ -40,4 +40,18 @@ public class _12_EntranceExamsSteps {
         }
 
     }
+
+    @And("^User sending the keys in the FormClass class$")
+    public void userSendingTheKeysInTheFormClassClass(DataTable elementsAndValues) {
+
+        List<List<String>> elementAndValueList = elementsAndValues.asLists(String.class);
+
+        for(int i = 0 ; i < elementAndValueList.size() ; i++){
+
+            formsClass.findElementAndSendKeysFunction(elementAndValueList.get(i).get(0),elementAndValueList.get(i).get(1) );
+
+        }
+
+
+    }
 }
