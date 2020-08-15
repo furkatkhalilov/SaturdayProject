@@ -56,6 +56,8 @@ public class FormsClass extends _01_ParentClass{
     @FindBy(xpath = "//span[text()=' Add ']")
     private WebElement popUpAddButton;
 
+    @FindBy(linkText = "Got it!")
+    private WebElement gotItButton;
 
 
     WebElement myElement;
@@ -109,6 +111,10 @@ public class FormsClass extends _01_ParentClass{
             case "popUpAddButton":
                 myElement =popUpAddButton;
                 break;
+            case "gotItButton":
+                myElement =gotItButton;
+                break;
+
 
         }
 

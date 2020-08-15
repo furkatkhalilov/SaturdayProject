@@ -13,7 +13,6 @@ Feature: Students functionality
     And User sending the keys in the FormClass class
       | FirstNameInput | techno |
       | LastNameInput  | study  |
-
     And Click in the formsClass class
       | genderDropdown           |
       | Option1                  |
@@ -43,4 +42,8 @@ Feature: Students functionality
       | popUpPhoneNumber | 8625874545 |
 
     And Click in the formsClass class
+      | gotItButton    |
       | popUpAddButton |
+
+
+

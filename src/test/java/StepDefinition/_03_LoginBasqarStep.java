@@ -47,7 +47,7 @@ public class _03_LoginBasqarStep {
         Assert.assertNotNull(verifyLogin);
 
         try {
-            Thread.sleep(4000);
+            Thread.sleep(8000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

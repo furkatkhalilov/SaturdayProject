@@ -46,7 +46,7 @@ Feature: Fees functionality
 #     Error message should be displayed
 #     delete both of the fees.
 
-
+  @E2E1
   Scenario: Edit multiple fees
     Given Navigate to basqar
     When Enter the username and password and click on login button

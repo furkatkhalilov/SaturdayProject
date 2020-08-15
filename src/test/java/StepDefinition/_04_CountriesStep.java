@@ -18,7 +18,6 @@ public class _04_CountriesStep {
     LeftNavElements leftNavElements = new LeftNavElements();
     DialogContent dialogContent = new DialogContent();
 
-
     @And("^Navigate to countries page$")
     public void navigate_to_countries_page(){
 

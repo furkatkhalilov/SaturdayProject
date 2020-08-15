@@ -32,7 +32,7 @@ import java.io.File;
           "html:target/cucumber-Html-Report",
           "com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportEnd2End.html" // to generate a extend report we need this plugin
         },
-        tags = {"@E2E"},
+        tags = {"@E2E1"},
         features = {"src/test/java/FeatureFiles"},
         glue = {"StepDefinition"},
         dryRun = false
@@ -40,6 +40,12 @@ import java.io.File;
 )
 
 public class End2EndScenario extends AbstractTestNGCucumberTests {
+
+        @BeforeTest
+        @Parameters("browser")
+        public void beforeMethod(String browser){
+                Driver.browserName = browser;
+        }
 
         //        After runner is done this after method will run and put username application name information in the report.
         @AfterClass
@@ -63,4 +69,10 @@ public class End2EndScenario extends AbstractTestNGCucumberTests {
 
                          If I have a fails then it is showing as red so it is understandable for every one in the team
                            After I run my regression or smoke I share with the team and they also aware of the result.
+         */
+
+
+        /*
+                
+
          */

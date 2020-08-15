@@ -70,7 +70,7 @@ public class Hooks {
             e.printStackTrace();
         }
 
-//        Driver.QuitDriver();
+        Driver.QuitDriver();
 
         System.out.println("This is the after class");
     }

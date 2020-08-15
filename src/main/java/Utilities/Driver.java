@@ -7,52 +7,50 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Driver {
 
+//     this is the driver class for running the code with multiple browsers
+
     /*
-        Why we are creating this driver?
-
-            Because we need to use one driver in every step definition and in the page classes.
-                To do that first option send the driver by constructor.
-
-                Second way create one driver it is a static.
-
-        Because we are using one driver in the project.
-            This is one concept name is Singleton driver.
-
-            INTERVIEW QUESTION:
-            What is singleton or what is singleton driver?
-                I am using singleton in my current project. My driver is a singleton and whenever I need
-                    a driver I am taking from my Driver class.
-
+      Thread Local
+        Thread local will multiply our static variable.
      */
 
-    private static WebDriver driver;
+//    Thread local will create a multiple driver for us.
+    private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
 
-    public static WebDriver getDriver() {
+//    With this string we will decide which browser to open
+    public static String browserName;
 
-//        if the driver is == null then create a driver if not then give me current driver
-        if (driver == null) {
-            WebDriverManager.chromedriver().setup(); // this line is for System.setproperty
-            driver = new ChromeDriver();
+//    If the threadDriver is null then create a driver for it. Taking a browser from driverfactory
+    public static WebDriver getDriver(){
+
+        if(threadDriver.get()==null){
+            setWebDriver(DriverFactory.createInstance(browserName));
         }
+        return threadDriver.get();
+    }
+//    If the threadDriver is null then fill the null point with a driver.
+    public static void setWebDriver(WebDriver driver){
 
-        return driver;
+        threadDriver.set(driver);
+    }
+
+
+//    Quit the driver in this method
+    public static void QuitDriver(){
+
+        if(threadDriver.get()!=null){
+
+            threadDriver.get().quit();
+            WebDriver driver= threadDriver.get();
+            driver = null;
+            threadDriver.set(driver);
+        }
 
     }
 
 
 
-    /*
-        We are going to call this method after each scenario.
 
-     */
-
-    public static void QuitDriver() {
-
-        if (driver != null) {
-            driver.quit();
-            driver = null; // if we dont type this line next scenario will fail error is NoSuchSessionException
-        }
-    }
 
 //    do we need instead of void "Webdriver"
 }
