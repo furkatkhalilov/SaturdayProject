@@ -18,13 +18,14 @@ public class Driver {
     private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
 
 //    With this string we will decide which browser to open
-    public static String browserName;
+//    public static String browserName;
+     public static ThreadLocal<String> browserName = new ThreadLocal<>();
 
 //    If the threadDriver is null then create a driver for it. Taking a browser from driverfactory
     public static WebDriver getDriver(){
 
         if(threadDriver.get()==null){
-            setWebDriver(DriverFactory.createInstance(browserName));
+            setWebDriver(DriverFactory.createInstance(browserName.get()));
         }
         return threadDriver.get();
     }

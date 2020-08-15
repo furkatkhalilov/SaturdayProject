@@ -16,7 +16,6 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import java.io.File;
@@ -33,14 +32,14 @@ import java.io.File;
           "html:target/cucumber-Html-Report",
           "com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportEnd2End.html" // to generate a extend report we need this plugin
         },
-        tags = {"@E2E1"},
+        tags = {"@E2E2"},
         features = {"src/test/java/FeatureFiles"},
         glue = {"StepDefinition"},
         dryRun = false
 
 )
 
-public class End2EndScenario extends AbstractTestNGCucumberTests {
+public class End2EndScenario2 extends AbstractTestNGCucumberTests {
 
         @BeforeClass
         @Parameters("browser")

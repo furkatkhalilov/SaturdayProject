@@ -34,7 +34,7 @@ Feature: Citizenship functionality
     Then Success message should be displayed
 
 #   Create one citizenship name as "asd " and create the citizenship again with "asd" verify error message is displayed
-  @E2E
+  @E2E @E2E2
   Scenario: Negative scenario
     Given Navigate to basqar
     When Enter the username and password and click on login button
