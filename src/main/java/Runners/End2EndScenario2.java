@@ -73,6 +73,17 @@ public class End2EndScenario2 extends AbstractTestNGCucumberTests {
 
 
         /*
+                If they asked
+                        What is the Runner files what can we say?
+                        How do you run your multiple feature files together?
+                        For example you have 20 scenarios and you would like to run 15 of them how you can do it?
+
+                 Runner is helps me to run multiple feature files or scenarious together.
+                        I can decide with a tags which file or which scenario to run.
+
+                        For example in my project I have regressionRunner class and I have a regression tag.
+                        I am adding these tags to feature files and according to tags runner will run those scenarios.
+
 
 
          */

@@ -29,6 +29,7 @@ public class Hooks {
 
 //    This after annotation will run the code after each scenario
 //      We should import it from cucumber.api.java
+//    Cucumber is providing the scenario object
     @After
     public void after(Scenario scenario){
 
