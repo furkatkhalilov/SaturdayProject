@@ -10,6 +10,17 @@ public class _01_2DArray {
 
 //      Print all the data from the 2d array use a for loop
 
+        System.out.println("-------------------------");
+
+        for(int i = 0 ; i <zoo.length ; i++){
+
+            for(int j = 0 ; j < zoo[i].length ; j++){
+
+                System.out.println(zoo[i][j]);
+            }
+        }
+
+//       Print the next data for the zebra
 
 
 
