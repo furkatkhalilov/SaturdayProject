@@ -15,7 +15,11 @@ public class DriverFactory {
 
         WebDriver driver;
 
-         switch (browserName){
+        if(browserName==null){
+            browserName="chrome";
+        }
+
+        switch (browserName){
 
              default:
                  WebDriverManager.chromedriver().setup(); // this line is for System.setproperty
