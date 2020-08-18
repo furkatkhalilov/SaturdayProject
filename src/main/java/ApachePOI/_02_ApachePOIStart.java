@@ -17,7 +17,7 @@ public class _02_ApachePOIStart {
 //        navigate to file
         FileInputStream inputStream = new FileInputStream(path);
 
-//        Open a workbook
+//        Open a workbook - Access to data
         Workbook workbook = WorkbookFactory.create(inputStream);
 
 //        Decide the which sheet we need to work with
@@ -26,9 +26,10 @@ public class _02_ApachePOIStart {
 
         Row row = mySheet.getRow(0);
 
-        Cell cell = row.getCell(0);
+        Cell cell = row.getCell(1);
 
         System.out.println(cell.toString());
 
     }
+
 }
