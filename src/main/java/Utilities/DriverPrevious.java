@@ -38,8 +38,6 @@ public class DriverPrevious {
 
     }
 
-
-
     /*
         We are going to call this method after each scenario.
 
