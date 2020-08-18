@@ -22,8 +22,13 @@ public class _01_2DArray {
 
 //       Print the next data for the zebra
 
+        System.out.println("----------------------");
 
+        for(int i = 0 ; i <zoo.length ; i++){
 
+            if(zoo[i][0].equalsIgnoreCase("Zebra")){
+                System.out.println(zoo[i][1]);
+            }
+        }
     }
-
 }
