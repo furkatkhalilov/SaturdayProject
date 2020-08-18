@@ -36,7 +36,7 @@ public class _06_ApachePOITask3 {
 
             cell = row.getCell(0);
 
-            if(cell.toString().equals("Address")){
+            if(cell.toString().equals("Password")){
 
 //            cell = row.getCell(1);
 //                System.out.println(cell);
