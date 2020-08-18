@@ -1,28 +1,14 @@
-package ApachePOI;
+package Utilities;
 
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
-public class _07_ApachePOITask4 {
+public class _01_ApachePOIReusableMethod {
 
-
-    /*
-
-            Get the data in column 1 for each row.
-
-            ali123
-            MyPasswordIsHere
-            123 main
-            12345
-            Harrison
-            New jersey
-
-
-     */
-
-    public static void main(String[] args) throws IOException {
+    public void getTheSpecificDataFromExcel() throws IOException {
 
         String path ="src/main/resources/LoginData.xlsx";
 
@@ -39,18 +25,32 @@ public class _07_ApachePOITask4 {
         Row row;
         Cell cell;
 
-        int rowCount = mySheet.getPhysicalNumberOfRows();
-        System.out.println("Row count for the excel sheet--> " + rowCount );
+        int maxRow = mySheet.getPhysicalNumberOfRows();
 
-        for(int i = 0 ; i <rowCount ; i++){
+        ArrayList<String> listOfAddress = new ArrayList<>();
+
+        for(int i = 0 ; i<maxRow ; i++){
 
             row = mySheet.getRow(i);
 
-            cell = row.getCell(1);
+            cell = row.getCell(0);
 
-            System.out.println(cell);
+            if(cell.toString().equals("Address")){
 
+                int columnCount = row.getPhysicalNumberOfCells();
+
+                for(int j = 1 ; j <columnCount ; j++){
+
+                    cell = row.getCell(j);
+
+                    listOfAddress.add(cell.toString());
+
+                }
+            }
         }
+
+        System.out.println(listOfAddress);
+
 
     }
 
