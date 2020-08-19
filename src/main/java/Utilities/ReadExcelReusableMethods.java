@@ -79,7 +79,6 @@ public class ReadExcelReusableMethods {
                 resultList.add(cell.toString());
             }
         }
-
         return resultList;
     }
 
