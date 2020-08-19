@@ -5,6 +5,7 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ReadExcelReusableMethods {
 
@@ -59,11 +60,27 @@ public class ReadExcelReusableMethods {
         return result;
     }
 
-    public void getAllData(){
+    public ArrayList<String> getAllData(){
 
+        int maxRow= mySheet.getPhysicalNumberOfRows();
 
-        
+        ArrayList resultList = new ArrayList();
 
+        for(int i = 0 ; i <maxRow ; i++){
+
+            row = mySheet.getRow(i);
+
+            int cellCount = row.getPhysicalNumberOfCells();
+
+            for(int j = 0 ; j <cellCount ; j++){
+
+                cell = row.getCell(j);
+
+                resultList.add(cell.toString());
+            }
+        }
+
+        return resultList;
     }
 
     public static void main(String[] args) {
@@ -75,6 +92,15 @@ public class ReadExcelReusableMethods {
         String s1 = readExcelReusableMethods.getSpecificData("Address" , 1);
 
         System.out.println(s1);
+        System.out.println("------------------");
+
+        ArrayList<String> l1 = new ArrayList();
+        l1 = readExcelReusableMethods.getAllData();
+
+        System.out.println(l1);
+
+        System.out.println("------------------");
+
     }
 
 }

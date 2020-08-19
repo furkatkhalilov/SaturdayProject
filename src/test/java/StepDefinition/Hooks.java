@@ -65,13 +65,7 @@ public class Hooks {
             }
         }
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Driver.QuitDriver();
+//        Driver.QuitDriver();
 
         System.out.println("This is the after class");
     }
