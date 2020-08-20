@@ -1,7 +1,9 @@
 package StepDefinition;
 
 import PageObjectModel.DialogContent;
+import PageObjectModel.ReleaseNotesPage;
 import Utilities.ReadExcelReusableMethods;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
 public class _14_ApachePOIStepDefinition {
@@ -9,6 +11,7 @@ public class _14_ApachePOIStepDefinition {
     DialogContent dialogContent = new DialogContent();
     String path1 = "src/main/resources/LoginData.xlsx";
     ReadExcelReusableMethods readExcelReusableMethods = new ReadExcelReusableMethods(path1 , "DiologContent");
+    ReleaseNotesPage releaseNotesPage = new ReleaseNotesPage();
 
     @When("^User create a citizenship with ApachePOI$")
     public void userCreateACitizenshipWithApachePOI() {
@@ -38,6 +41,7 @@ public class _14_ApachePOIStepDefinition {
 
     @When("^User create a Fees with ApachePOI$")
     public void userCreateAFeesWithApachePOI() {
+
         dialogContent.findElementAndClickFunction("AddButton");
 
         String name = readExcelReusableMethods.getSpecificData("Name",1);
@@ -75,4 +79,9 @@ public class _14_ApachePOIStepDefinition {
 
     }
 
+    @And("^Verify all the points as expected in the release notes page$")
+    public void verifyAllThePointsAsExpectedInTheReleaseNotesPage() {
+
+        releaseNotesPage.CheckTwoLists();
+    }
 }

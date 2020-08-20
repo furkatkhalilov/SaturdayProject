@@ -36,9 +36,3 @@ Feature: Citizenship module
     When User delete a Fees with ApachePOI
     Then Success message should be displayed
 
-
-#    Create an excel sheet for the release notes in basqar
-#       Add all the points in the excel
-#     Navigate to release notes and make sure text in the website and String in the excel is equal
-
-

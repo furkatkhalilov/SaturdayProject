@@ -115,7 +115,6 @@ public class FormsClass extends _01_ParentClass{
                 myElement =gotItButton;
                 break;
 
-
         }
 
         clickFunction(myElement);

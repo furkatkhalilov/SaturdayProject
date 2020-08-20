@@ -60,6 +60,7 @@ public class ReadExcelReusableMethods {
         return result;
     }
 
+//    Get All the data from the excel
     public ArrayList<String> getAllData(){
 
         int maxRow= mySheet.getPhysicalNumberOfRows();
