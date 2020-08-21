@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import Utilities.Driver;
+import Utilities.WriteInExcelReusableMethod;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -65,7 +66,9 @@ public class Hooks {
             }
         }
 
-//        Driver.QuitDriver();
+        WriteInExcelReusableMethod.writeInExcelReusable("src\\main\\resources\\Results.xlsx", "Sheet1",scenario);
+
+        Driver.QuitDriver();
 
         System.out.println("This is the after class");
     }

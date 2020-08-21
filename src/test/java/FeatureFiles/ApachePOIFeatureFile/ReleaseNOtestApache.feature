@@ -15,4 +15,4 @@ Feature: Release Notes text
     |ReleaseNotesButton|
     And Verify all the points as expected in the release notes page
 
-    
+

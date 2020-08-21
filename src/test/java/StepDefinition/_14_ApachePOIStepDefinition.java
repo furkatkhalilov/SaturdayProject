@@ -6,11 +6,19 @@ import Utilities.ReadExcelReusableMethods;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
+import java.util.ArrayList;
+
 public class _14_ApachePOIStepDefinition {
 
     DialogContent dialogContent = new DialogContent();
     String path1 = "src/main/resources/LoginData.xlsx";
     ReadExcelReusableMethods readExcelReusableMethods = new ReadExcelReusableMethods(path1 , "DiologContent");
+
+//    Created a new object because  verifyAllThePointsAsExpectedInTheReleaseNotesPage method should navigate to
+//      other excel sheet --> ReleaseNotes
+    String path2 = "src/main/resources/ReleaseNotes.xlsx";
+    ReadExcelReusableMethods readExcelReusableMethods2 = new ReadExcelReusableMethods(path2 , "Sheet1");
+
     ReleaseNotesPage releaseNotesPage = new ReleaseNotesPage();
 
     @When("^User create a citizenship with ApachePOI$")
@@ -82,6 +90,11 @@ public class _14_ApachePOIStepDefinition {
     @And("^Verify all the points as expected in the release notes page$")
     public void verifyAllThePointsAsExpectedInTheReleaseNotesPage() {
 
-        releaseNotesPage.CheckTwoLists();
+        ArrayList<String> dataFromExcel = new ArrayList<>();
+
+//        Get the data from the excel
+        dataFromExcel = readExcelReusableMethods2.getAllData();
+
+        releaseNotesPage.CheckTwoLists(dataFromExcel);
     }
 }
