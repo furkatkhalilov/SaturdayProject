@@ -62,7 +62,20 @@ public class WriteInExcelReusableMethod {
             e.printStackTrace();
         }
 
+        /*
+            To get a data from excel I am using ApachePOI.
+                I can get a data from the excel and use it in the selenium.
+                I can write the data to excel for example scenario name and status of the scenario(failed or passed).
 
+
+            How do you work with apachePOI? Steps for apache POI?
+                1)I need a location of the excel.
+                2) File input stream
+                3) Workbook
+                4) Sheet
+                5) Row and cell.
+                    After these steps I can get my data from excel.
+         */
 
         /*
             While typing in the excel we need to close the file.
