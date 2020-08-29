@@ -9,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DialogContent extends _01_ParentClass{
+public class DialogContent extends _01_ParentClass {
 
-    public DialogContent(){
+    public DialogContent() {
 
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
 
     }
 
@@ -35,11 +35,11 @@ public class DialogContent extends _01_ParentClass{
     @FindBy(xpath = "//input[@class='mat-autocomplete-trigger mat-chip-input mat-input-element']")
     private WebElement UserTypeDropdown;
 
-        @FindBy(xpath = " (//span[@class='mat-option-text'][text()=' Everyone '])[1]")
-        private WebElement everyoneUserOption;
+    @FindBy(xpath = " (//span[@class='mat-option-text'][text()=' Everyone '])[1]")
+    private WebElement everyoneUserOption;
 
-        @FindBy(xpath = "//span[@class='mat-option-text']")
-        private List<WebElement> userTypeAllOptions;
+    @FindBy(xpath = "//span[@class='mat-option-text']")
+    private List<WebElement> userTypeAllOptions;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']/input")
     private WebElement IntegrationCode;
@@ -59,12 +59,14 @@ public class DialogContent extends _01_ParentClass{
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement yesButton;
 
+
+
 //    //table/tbody/tr/td[2]
 //        tr is a row of the table and td is a colomn of the table
 //         //table/tbody/tr[5]/td[2] row 5 column 2
 
     @FindAll({
-           @FindBy(xpath = "//table/tbody/tr/td[2]")
+            @FindBy(xpath = "//table/tbody/tr/td[2]")
     })
     private List<WebElement> nameList;
 
@@ -80,10 +82,10 @@ public class DialogContent extends _01_ParentClass{
 
     WebElement myElement;
 
-//    In this method we are going to click on the element.
-    public void findElementAndClickFunction(String ElementName){
+    //    In this method we are going to click on the element.
+    public void findElementAndClickFunction(String ElementName) {
 
-        switch (ElementName){
+        switch (ElementName) {
             case "AddButton":
                 myElement = AddButton;
                 break;
@@ -104,95 +106,94 @@ public class DialogContent extends _01_ParentClass{
                 break;
 
 
-
         }
 
         clickFunction(myElement);
     }
 
-//      In this method we are going to sendKeys to element
-        public void findElementAndSendKeysFunction(String ElementName , String value){
+    //      In this method we are going to sendKeys to element
+    public void findElementAndSendKeysFunction(String ElementName, String value) {
 
 //        Find the element in this class and send the element to sendKeysFunction
-            switch (ElementName){
-                case "NameInput":
-                    myElement = NameInput;
-                    break;
-                case "CodeInput":
-                    myElement = CodeInput;
-                    break;
-                case "IntegrationCode":
-                    myElement = IntegrationCode;
-                    break;
-                case "PriorityInput":
-                    myElement = PriorityInput;
-                    break;
-                case "shortNameInput":
-                    myElement = shortNameInput;
-                    break;
-
-            }
-//            Create a method in parentClass which is going to wait first and sendKeys
-            sendKeysFunction(myElement , value);
+        switch (ElementName) {
+            case "NameInput":
+                myElement = NameInput;
+                break;
+            case "CodeInput":
+                myElement = CodeInput;
+                break;
+            case "IntegrationCode":
+                myElement = IntegrationCode;
+                break;
+            case "PriorityInput":
+                myElement = PriorityInput;
+                break;
+            case "shortNameInput":
+                myElement = shortNameInput;
+                break;
 
         }
+//            Create a method in parentClass which is going to wait first and sendKeys
+        sendKeysFunction(myElement, value);
 
-//      Create one method finding the element
-        public void findElementAndVerifyElementContainText(String elementName , String WhichText){
+    }
 
-            switch (elementName){
-                case "SuccessfullyMessage":
-                    myElement=SuccessfullyMessage;
-                    break;
-                case "ErrorMessage":
-                    myElement=ErrorMessage;
-                    break;
+    //      Create one method finding the element
+    public void findElementAndVerifyElementContainText(String elementName, String WhichText) {
 
-            }
+        switch (elementName) {
+            case "SuccessfullyMessage":
+                myElement = SuccessfullyMessage;
+                break;
+            case "ErrorMessage":
+                myElement = ErrorMessage;
+                break;
+
+        }
 
 //            Creating one method in parent class which is get the element and it is containing the WhichText(parameter)
 
-            ElementContainsText(myElement , WhichText);
+        ElementContainsText(myElement, WhichText);
 
-        }
+    }
 
-        /*
-            This method is going to click on edit button according to names.
-         */
-        public void editAndDeleteFunction(String nameCountry , String editOrDelete)  {
+    /*
+        This method is going to click on edit button according to names.
+     */
+    public void editAndDeleteFunction(String nameCountry, String editOrDelete) {
 
-            waiting(1000);
+        waiting(1000);
 
-            List<WebElement> whichList = new ArrayList<>();
+        List<WebElement> whichList = new ArrayList<>();
 
 //        With this if else statement we are able to handle edit and delete functionality together.
-            if(editOrDelete.equalsIgnoreCase("edit")){
-                whichList=editButtonList;
-            }else{
-                whichList=deleteButton;
-            }
-
-            for(int i =0; i<nameList.size() ;i++){
-                if(nameList.get(i).getText().equals(nameCountry)){
-                    clickFunction(whichList.get(i));
-
-                }
-            }
+        if (editOrDelete.equalsIgnoreCase("edit")) {
+            whichList = editButtonList;
+        } else {
+            whichList = deleteButton;
         }
 
-        public void clickOnElementInTheDropdown(String whichOption){
+        for (int i = 0; i < nameList.size(); i++) {
+            if (nameList.get(i).getText().equals(nameCountry)) {
+                clickFunction(whichList.get(i));
 
-           for(int i = 0 ; i<userTypeAllOptions.size() ; i++){
+            }
+        }
+    }
 
-               if(userTypeAllOptions.get(i).getText().contains(whichOption)){
+    public void clickOnElementInTheDropdown(String whichOption) {
 
-                   userTypeAllOptions.get(i).click();
-                   break;
-               }
+        for (int i = 0; i < userTypeAllOptions.size(); i++) {
 
-           }
+            if (userTypeAllOptions.get(i).getText().contains(whichOption)) {
+
+                userTypeAllOptions.get(i).click();
+                break;
+            }
 
         }
+
+    }
 }
 
 
