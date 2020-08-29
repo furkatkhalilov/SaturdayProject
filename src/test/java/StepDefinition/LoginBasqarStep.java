@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class _03_LoginBasqarStep {
+public class LoginBasqarStep {
 
     WebDriver driver;
     FormsClass formsClass = new FormsClass();

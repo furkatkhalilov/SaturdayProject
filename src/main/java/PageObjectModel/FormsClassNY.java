@@ -2,11 +2,15 @@ package PageObjectModel;
 
 import Utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FormsClassNY extends _01_ParentClass{
+import java.util.List;
 
+public class FormsClassNY extends _01_ParentClass{
+    WebElement myElement;
+    List<WebElement> myWebElementList;
     public FormsClassNY(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -20,9 +24,24 @@ public class FormsClassNY extends _01_ParentClass{
     @FindBy(css = "ms-text-field[formcontrolname='firstName']>input")
     private WebElement FirstNameInput;
 
+    @FindAll(
+            @FindBy(xpath = "//mat-option[contains(@id, 'mat-option')]")
+    )
+    private List<WebElement> ListOfCountries;
+
+    @FindBy(xpath = "//mat-form-field[@formgroupname='country']")
+    private WebElement CountryButtonInTheForm;
+
+    @FindBy(xpath = "(//ms-text-field[@placeholder='GENERAL.FIELD.NAME']/input)[2]")
+    private WebElement cityInput;
+
+
+
+
+
     //---------------------------//
 
-    WebElement myElement;
+
 
     public void findElementAndClickFunction(String elementName){
 
@@ -30,6 +49,9 @@ public class FormsClassNY extends _01_ParentClass{
 
             case "academicPeriod":
                 myElement =academicPeriod;
+                break;
+            case "CountryButtonInTheForm":
+                myElement =CountryButtonInTheForm;
                 break;
 
         }
@@ -48,10 +70,26 @@ public class FormsClassNY extends _01_ParentClass{
             case "FirstNameInput":
                 myElement = FirstNameInput;
                 break;
+            case "cityInput":
+                myElement = cityInput;
+                break;
 
         }
 
         sendKeysFunction(myElement ,value );
+
+    }
+
+    public void findElementFromTheList(String ElementName, String text){
+        switch (ElementName){
+
+            case "ListOfCountries":
+                myWebElementList = ListOfCountries;
+                break;
+
+        }
+
+        clickOnElementInTheDropdown(myWebElementList, text);
 
     }
 

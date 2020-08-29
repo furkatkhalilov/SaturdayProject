@@ -1,12 +1,16 @@
 package PageObjectModel;
 
 import Utilities.Driver;
+import gherkin.lexer.Th;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class _01_ParentClass {
@@ -78,6 +82,21 @@ public class _01_ParentClass {
 
         js.executeScript("arguments[0].scrollIntoView();", elementToScroll);
     }
+
+    public void clickOnElementInTheDropdown(List<WebElement> list, String whichOption){
+
+        for(int i = 0 ; i<list.size() ; i++){
+
+            if(list.get(i).getText().contains(whichOption)){
+
+                list.get(i).click();
+                break;
+            }
+
+        }
+
+    }
+
 
 
 }
