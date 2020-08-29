@@ -22,9 +22,6 @@ public class _03_LoginBasqarStep {
     @Given("^Navigate to basqar$")
     public void navigate_to_basqar() {
 
-        /*
-            Set property - open browser and navigate to website
-         */
 
         driver = Driver.getDriver();
 
