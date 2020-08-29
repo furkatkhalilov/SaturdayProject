@@ -5,12 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LeftNavElementsNY extends _01_ParentClass{
+public class LeftNavElementsNY extends _01_ParentClass {
 
 
-    public LeftNavElementsNY(){
+    public LeftNavElementsNY() {
 
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     //----------------------------------------//
@@ -18,17 +18,43 @@ public class LeftNavElementsNY extends _01_ParentClass{
     private WebElement Setup1Button;
 
     //------------------------------------------//
+// Education menu elements
+    @FindBy(xpath = "//span[text()='Education']")
+    private WebElement educationButton;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[5]")
+    private WebElement educationSetupButton;
+
+    @FindBy(xpath = "//span[text()='Subject Categories']")
+    private WebElement subjectCategories;
+
+    @FindBy(xpath = "(//span[text()='Subjects'])[1]")
+    private WebElement subjectButton;
+
+
+
+
+
 
 
 
     WebElement myElement;
 
-    public void findElementAndClickFunction(String elementName){
+    public void findElementAndClickFunction(String elementName) {
 
-        switch (elementName){
+        switch (elementName) {
 
-            case "Setup1Button":
-                myElement =Setup1Button;
+            case "Education":
+                myElement = educationButton;
+                break;
+            case "Setup":
+                myElement = educationSetupButton;
+                break;
+            case "Subject Categories":
+                myElement = subjectCategories;
+                break;
+            case "Subject":
+                myElement = subjectButton;
                 break;
 
 
