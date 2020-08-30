@@ -24,7 +24,6 @@ public class Hooks {
     /*
         Before
 
-
      */
 
 //    This after annotation will run the code after each scenario

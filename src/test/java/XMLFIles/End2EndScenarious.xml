@@ -10,7 +10,7 @@
     </test>
 
 
-    <test name = "chrome1">
+    <test name = "chrome">
         <parameter name="browser" value = "chrome"/>
         <classes>
 
