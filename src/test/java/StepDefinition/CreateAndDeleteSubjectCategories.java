@@ -3,8 +3,12 @@ package StepDefinition;
 import PageObjectModel.DialogContent;
 import PageObjectModel.LeftNavElementsNY;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -26,7 +30,10 @@ public class CreateAndDeleteSubjectCategories {
 
     @Then("^Click on element inside dialog content$")
     public void click_on_element_inside_dialog_content(DataTable element) {
+        dialogContent.waiting(1000);
         List<String> listOfElements = element.asList(String.class);
+
+
         for (int i = 0; i < listOfElements.size(); i++) {
             dialogContent.findElementAndClickFunction(listOfElements.get(i));
         }
@@ -51,5 +58,16 @@ public class CreateAndDeleteSubjectCategories {
         dialogContent.findElementAndVerifyElementContainText("SuccessfullyMessage" , "successfully");
 
     }
+    @And("^Select \"([^\"]*)\" from dropdown list$")
+    public void selectFromDropdownList(String subjectCategory) {
 
+        dialogContent.clickOnElementInTheDropdown(subjectCategory);
+
+    }
+
+    @And("^Randomly select from \"([^\"]*)\" dropdown list$")
+    public void randomlySelectFromDropdownList(String elementName) {
+        dialogContent.findElementAndClickFunction("Style");
+        dialogContent.clickOnRandomElementInTheDropdown();
+    }
 }

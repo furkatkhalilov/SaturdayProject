@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class DialogContent extends _01_ParentClass {
 
@@ -59,6 +60,12 @@ public class DialogContent extends _01_ParentClass {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement yesButton;
 
+    @FindBy(xpath = "//mat-select[@role='listbox']//span[text()='Subject Category']")
+    private WebElement subjectCatDropdown;
+
+    @FindBy(xpath = "//mat-select[@role='listbox']//span[text()='Style']")
+    private WebElement subjectStyle;
+
 
 
 //    //table/tbody/tr/td[2]
@@ -78,6 +85,7 @@ public class DialogContent extends _01_ParentClass {
     @FindAll({
             @FindBy(css = "ms-delete-button>button")
     })
+
     private List<WebElement> deleteButton;
 
     WebElement myElement;
@@ -103,6 +111,12 @@ public class DialogContent extends _01_ParentClass {
                 break;
             case "everyoneUserOption":
                 myElement = everyoneUserOption;
+                break;
+            case "Subject Category":
+                myElement = subjectCatDropdown;
+                break;
+            case "Style":
+                myElement = subjectStyle;
                 break;
 
 
@@ -193,6 +207,12 @@ public class DialogContent extends _01_ParentClass {
 
         }
 
+    }
+
+    public void clickOnRandomElementInTheDropdown(){
+        Random random = new Random();
+        int index = random.nextInt(userTypeAllOptions.size());
+        userTypeAllOptions.get(index).click();
     }
 }
 
