@@ -70,4 +70,20 @@ public class CreateAndDeleteSubjectCategories {
         dialogContent.findElementAndClickFunction("Style");
         dialogContent.clickOnRandomElementInTheDropdown();
     }
+
+    @Then("^Error message should be displayed$")
+    public void errorMessageShouldBeDisplayed() {
+        dialogContent.findElementAndVerifyElementContainText("ErrorMessage" , "Error");
+
+    }
+
+    @Then("^Navigate back$")
+    public void navigateBack() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        dialogContent.navigateBack();
+    }
 }

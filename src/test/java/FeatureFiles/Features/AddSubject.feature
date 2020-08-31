@@ -78,8 +78,45 @@ Feature: Education Subject functionality
     When User delete "Business"
     Then Success message should be displayed
 
+  Scenario: 3.7 Deleting subject categories before deleting subject
 
+    And Click in the leftnav class
+      | Education          |
+      | Setup              |
+      | Subject Categories |
+    Then Click on element inside dialog content
+      | AddButton |
+    And Fill out fields
+      | NameInput | Business |
+      | CodeInput | BS01     |
+    Then Click on element inside dialog content
+      | SaveButton |
+    Then Success message should be displayed
 
+    Given Click in the leftnav class
+#      | Education |
+#      | Setup     |
+      | Subject |
+    Then Click on element inside dialog content
+      | AddButton |
+    And Fill out fields
+      | NameInput | Business fundamentals |
+      | CodeInput | BSF_001               |
+    Then Click on element inside dialog content
+      | Subject Category |
+    And Select "Business" from dropdown list
+    And Randomly select from "Style" dropdown list
+    Then Click on element inside dialog content
+      | SaveButton |
+    Then Success message should be displayed
+
+    Then Navigate back
+
+#    And Click in the leftnav class
+#      | Subject            |
+#      | Subject Categories |
+    When User delete "Business"
+    Then Error message should be displayed
 
 
 #  Scenario: 3.6 Create Subject

@@ -79,5 +79,9 @@ public class _01_ParentClass {
         js.executeScript("arguments[0].scrollIntoView();", elementToScroll);
     }
 
+    public void navigateBack(){
+        driver.navigate().back();
+    }
+
 
 }
