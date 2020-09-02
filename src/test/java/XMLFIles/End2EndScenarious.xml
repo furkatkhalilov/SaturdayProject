@@ -1,4 +1,4 @@
-<suite name ="suite1" parallel = "tests" thread-count="2">
+<suite name ="suite1" parallel = "classes" thread-count="2">
 
     <test name = "firefox">
 
@@ -13,7 +13,6 @@
     <test name = "chrome">
         <parameter name="browser" value = "chrome"/>
         <classes>
-
             <class name="Runners.End2EndScenario"/>
         </classes>
     </test>

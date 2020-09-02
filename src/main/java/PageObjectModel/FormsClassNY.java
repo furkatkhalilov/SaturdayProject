@@ -18,11 +18,11 @@ public class FormsClassNY extends _01_ParentClass{
 
 //----------------------------//
 
-    @FindBy(xpath = "//mat-select[@aria-label='Academic Period']")
-    private WebElement academicPeriod;
+//    @FindBy(xpath = "//mat-select[@aria-label='Academic Period']")
+//    private WebElement academicPeriod;
 
-    @FindBy(css = "ms-text-field[formcontrolname='firstName']>input")
-    private WebElement FirstNameInput;
+//    @FindBy(css = "ms-text-field[formcontrolname='firstName']>input")
+//    private WebElement FirstNameInput;
 
     @FindAll(
             @FindBy(xpath = "//mat-option[contains(@id, 'mat-option')]")
@@ -47,9 +47,9 @@ public class FormsClassNY extends _01_ParentClass{
 
         switch (elementName){
 
-            case "academicPeriod":
-                myElement =academicPeriod;
-                break;
+//            case "academicPeriod":
+//                myElement =academicPeriod;
+//                break;
             case "CountryButtonInTheForm":
                 myElement =CountryButtonInTheForm;
                 break;
@@ -66,10 +66,10 @@ public class FormsClassNY extends _01_ParentClass{
     public void findElementAndSendKeysFunction(String ElementName , String value){
 
         switch (ElementName){
-
-            case "FirstNameInput":
-                myElement = FirstNameInput;
-                break;
+//
+//            case "FirstNameInput":
+//                myElement = FirstNameInput;
+//                break;
             case "cityInput":
                 myElement = cityInput;
                 break;
@@ -90,6 +90,19 @@ public class FormsClassNY extends _01_ParentClass{
         }
 
         clickOnElementInTheDropdown(myWebElementList, text);
+
+    }
+    public void clickOnTheLastItemInTheList (String ElementName){
+        switch (ElementName){
+
+            case "ListOfCountries":
+                myWebElementList = ListOfCountries;
+                break;
+
+        }
+        scrollToElement(myWebElementList.get(myWebElementList.size()-1));
+        clickOnTheLastElement(myWebElementList);
+
 
     }
 

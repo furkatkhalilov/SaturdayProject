@@ -2,6 +2,7 @@ package PageObjectModel;
 
 import Utilities.Driver;
 import gherkin.lexer.Th;
+import org.apache.commons.math3.analysis.function.Exp;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,6 +31,7 @@ public class _01_ParentClass {
 //    Click on element method
     public void clickFunction(WebElement element){
 
+        waitUntilVisible(element);
         waitUntilClickable(element);
         scrollToElement(element);
         element.click();
@@ -52,6 +54,11 @@ public class _01_ParentClass {
         wait.until(ExpectedConditions.visibilityOf(elementToWait));
 
     }
+    public void waitUntilAllElementVisible(List<WebElement> webElementListToWait){
+
+        wait.until(ExpectedConditions.visibilityOfAllElements(webElementListToWait));
+
+    }
 
 
 //    WaitForClickable
@@ -66,6 +73,8 @@ public class _01_ParentClass {
 
         waitUntilVisible(element);
         Assert.assertTrue(element.getText().contains(myText));
+
+
     }
 
     public void waiting(int howLong){
@@ -84,18 +93,24 @@ public class _01_ParentClass {
     }
 
     public void clickOnElementInTheDropdown(List<WebElement> list, String whichOption){
-
+        scrollToElement(list.get(list.size()-1));
         for(int i = 0 ; i<list.size() ; i++){
-
-            if(list.get(i).getText().contains(whichOption)){
-
-                list.get(i).click();
+            if(list.get(i).getText().equalsIgnoreCase(whichOption)){
+             list.get(i).click();
                 break;
             }
 
         }
 
     }
+
+    protected void clickOnTheLastElement(List<WebElement> list){
+        scrollToElement(list.get(list.size()-1));
+
+        list.get(list.size()-1).click();
+    }
+
+
 
 
 

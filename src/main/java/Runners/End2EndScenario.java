@@ -54,7 +54,7 @@ public class End2EndScenario extends AbstractTestNGCucumberTests {
 
 //                Location of the xml file
                 Reporter.loadXMLConfig(new File("src/test/java/FeatureFiles/extentReport.xml"));
-                Reporter.setSystemInfo("User Name" , "Ali Koklu");
+                Reporter.setSystemInfo("User Name" , "New York Campus");
                 Reporter.setSystemInfo("Application Name", "Basqar");
                 Reporter.setSystemInfo("Operating System Type" , System.getProperty("os.name"));
                 Reporter.setSystemInfo("Environment", "QA");

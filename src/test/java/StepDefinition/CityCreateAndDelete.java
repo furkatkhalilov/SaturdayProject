@@ -3,11 +3,15 @@ package StepDefinition;
 import PageObjectModel.DialogContentNY;
 import PageObjectModel.FormsClassNY;
 import PageObjectModel.LeftNavElementsNY;
+import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import gherkin.lexer.Th;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 
 
 public class CityCreateAndDelete {
@@ -18,45 +22,12 @@ public class CityCreateAndDelete {
     DialogContentNY dialogContent = new DialogContentNY();
     FormsClassNY formsClass= new FormsClassNY();
 
-    @When("^Navigate to City$")
-    public void navigateToCity() {
-
-        leftNavElements.findElementAndClickFunction("CityButton");
-
-    }
-
-
-    @And("^Create City \"([^\"]*)\" within \"([^\"]*)\"$")
-    public void createCityWithin(String cityName, String countryName) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        dialogContent.findElementAndClickFunction("AddButton");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        formsClass.findElementAndClickFunction("CountryButtonInTheForm");
-        formsClass.findElementAndSendKeysFunction("cityInput", cityName);
-        formsClass.findElementFromTheList("ListOfCountries", countryName);
-        dialogContent.findElementAndClickFunction("SaveButton");
-
-
-
-            }
-
 
     @When("^Delete City \"([^\"]*)\"$")
     public void deleteCity(String cityName)  {
 
-
-        System.out.println(
-                dialogContent.nameList.get(0).getText() + "  "+
-                        dialogContent.nameList.get(1).getText() + "  "+
-                dialogContent.nameList.get(2).getText() + "  " + dialogContent.nameList.get(3).getText());
+        dialogContent.waitAllElementsVisible("nameList");
+        dialogContent.waitAllElementsVisible("deleteButton");
 
         dialogContent.editAndDeleteFunction(cityName,"delete");
 
@@ -78,5 +49,16 @@ public class CityCreateAndDelete {
         dialogContent.findElementAndVerifyElementContainText("ErrorMessage" , "Error");
 
 
+    }
+
+    @And("^Create City \"([^\"]*)\"$")
+    public void createCity(String cityName) {
+        dialogContent.waiting(1000);
+        dialogContent.findElementAndClickFunction("AddButton");
+        dialogContent.waitAllElementsVisible("nameList");
+        formsClass.findElementAndClickFunction("CountryButtonInTheForm");
+        formsClass.findElementAndSendKeysFunction("cityInput", cityName);
+        formsClass.clickOnTheLastItemInTheList("ListOfCountries");
+        dialogContent.findElementAndClickFunction("SaveButton");
     }
 }
