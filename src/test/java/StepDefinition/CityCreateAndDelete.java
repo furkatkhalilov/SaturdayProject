@@ -1,17 +1,13 @@
 package StepDefinition;
 
+import PageObjectModel.DialogContent;
 import PageObjectModel.DialogContentNY;
 import PageObjectModel.FormsClassNY;
 import PageObjectModel.LeftNavElementsNY;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import gherkin.lexer.Th;
 import org.openqa.selenium.WebDriver;
-
-import java.util.List;
 
 
 public class CityCreateAndDelete {

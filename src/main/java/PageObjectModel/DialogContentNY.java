@@ -28,6 +28,9 @@ public class DialogContentNY extends _01_ParentClass {
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input")
     private WebElement NameInput;
 
+    @FindBy(xpath = "//ms-text-field[@placeholder=\"GENERAL.FIELD.NAME\"]/input")
+    private WebElement Name;
+
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     private WebElement SuccessfullyMessage;
 
@@ -67,8 +70,12 @@ public class DialogContentNY extends _01_ParentClass {
     @FindBy(xpath = "//mat-select[@role='listbox']//span[text()='Style']")
     private WebElement subjectStyle;
 
-    //    //span[text()='Human Resources']
-    //    (//span[text()='Setup'])[3]
+
+
+
+
+
+
 
 
 
@@ -98,6 +105,7 @@ public class DialogContentNY extends _01_ParentClass {
 
 
 
+
         }
 
 
@@ -114,7 +122,9 @@ public class DialogContentNY extends _01_ParentClass {
             case "CodeInput":
                 myElement = CodeInput;
                 break;
-
+            case "Name":
+                myElement = Name;
+                break;
 
 
         }

@@ -38,6 +38,18 @@ public class LeftNavElementsNY extends _01_ParentClass{
     @FindBy(xpath = "(//span[text()='Subjects'])[1]")
     private WebElement subjectButton;
 
+    @FindBy(xpath = "//span[text()='Human Resources']")
+    private WebElement HumanResources;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[3]")
+    private WebElement HumanResourcesSetup;
+
+    @FindBy(xpath = "//span[text()='Position Salary']")
+    private WebElement PositionSalary;
+
+    @FindBy(xpath = "//span[text()='Positions']\n")
+    private WebElement Position;
+
 
 
     //------------------------------------------//
@@ -73,6 +85,18 @@ public class LeftNavElementsNY extends _01_ParentClass{
                 break;
             case "subjectButton":
                 myElement =subjectButton;
+                break;
+            case "HumanResources":
+                myElement = HumanResources;
+                break;
+            case "HumanResourcesSetup":
+                myElement = HumanResourcesSetup;
+                break;
+            case "PositionSalary":
+                myElement = PositionSalary;
+                break;
+            case "Position":
+                myElement = Position;
                 break;
 
         }

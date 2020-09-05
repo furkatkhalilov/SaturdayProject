@@ -200,6 +200,7 @@ public class DialogContent extends _01_ParentClass{
         int index = random.nextInt(userTypeAllOptions.size());
         userTypeAllOptions.get(index).click();
     }
+
 }
 
 

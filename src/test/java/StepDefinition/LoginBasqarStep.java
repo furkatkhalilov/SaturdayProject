@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import PageObjectModel.FormsClass;
+import PageObjectModel.FormsClassNY;
 import Utilities.Driver;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -50,7 +51,7 @@ public class LoginBasqarStep {
         Assert.assertNotNull(verifyLogin);
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(7000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

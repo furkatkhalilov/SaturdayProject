@@ -4,7 +4,8 @@
 
         <parameter name="browser" value = "firefox"/>
         <classes>
-            <class name="Runners.End2EndScenario"/>
+            <class name="Runners.CountryScenario"/>
+            <class name="Runners.SubjectScenario"/>
 
         </classes>
     </test>
@@ -13,7 +14,8 @@
     <test name = "chrome">
         <parameter name="browser" value = "chrome"/>
         <classes>
-            <class name="Runners.End2EndScenario"/>
+            <class name="Runners.CountryScenario"/>
+            <class name="Runners.SubjectScenario"/>
         </classes>
     </test>
 </suite>

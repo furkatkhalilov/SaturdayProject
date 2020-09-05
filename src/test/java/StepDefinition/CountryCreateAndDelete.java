@@ -2,16 +2,11 @@ package StepDefinition;
 
 import PageObjectModel.DialogContent;
 import PageObjectModel.DialogContentNY;
-import PageObjectModel.LeftNavElements;
 import PageObjectModel.LeftNavElementsNY;
-import Utilities.Driver;
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.List;
@@ -45,25 +40,25 @@ public class CountryCreateAndDelete {
 
     }
 
-    @Then("^Click on element inside dialog content$") // TODO: 9/2/2020 DELETE WHEN MERGING
-    public void click_on_element_inside_dialog_content(DataTable element) {
-        dialogContent.waiting(1000);
-        List<String> listOfElements = element.asList(String.class);
-
-
-        for (int i = 0; i < listOfElements.size(); i++) {
-            dialogContent.findElementAndClickFunction(listOfElements.get(i));
-        }
-    }
-
-    @Then("^Fill out fields$") // TODO: 9/2/2020 DELETE WHEN MERGING
-    public void fill_out_fields(DataTable elements) {
-        List<List<String>> listOfElements = elements.asLists(String.class);
-
-        for (int i = 0; i < listOfElements.size(); i++) {
-            dialogContent.findElementAndSendKeysFunction(listOfElements.get(i).get(0),listOfElements.get(i).get(1));
-        }
-    }
+//    @Then("^Click on element inside dialog content$") // TODO: 9/2/2020 DELETE WHEN MERGING
+//    public void click_on_element_inside_dialog_content(DataTable element) {
+//        dialogContent.waiting(1000);
+//        List<String> listOfElements = element.asList(String.class);
+//
+//
+//        for (int i = 0; i < listOfElements.size(); i++) {
+//            dialogContent.findElementAndClickFunction(listOfElements.get(i));
+//        }
+//    }
+//
+//    @Then("^Fill out fields$") // TODO: 9/2/2020 DELETE WHEN MERGING
+//    public void fill_out_fields(DataTable elements) {
+//        List<List<String>> listOfElements = elements.asLists(String.class);
+//
+//        for (int i = 0; i < listOfElements.size(); i++) {
+//            dialogContent.findElementAndSendKeysFunction(listOfElements.get(i).get(0),listOfElements.get(i).get(1));
+//        }
+//    }
 
 
     @Then("^Success message should be displayed$") // TODO: 9/2/2020 Check and match, then delete. Added additional method wait until invisible
