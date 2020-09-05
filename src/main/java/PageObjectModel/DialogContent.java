@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class DialogContent extends _01_ParentClass{
 
@@ -193,6 +194,12 @@ public class DialogContent extends _01_ParentClass{
            }
 
         }
+
+    public void clickOnRandomElementInTheDropdown(){
+        Random random = new Random();
+        int index = random.nextInt(userTypeAllOptions.size());
+        userTypeAllOptions.get(index).click();
+    }
 }
 
 

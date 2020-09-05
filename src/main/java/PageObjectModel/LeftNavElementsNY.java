@@ -16,12 +16,27 @@ public class LeftNavElementsNY extends _01_ParentClass{
     //----------------------------------------//
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     private WebElement Setup1Button;
+
     @FindBy(xpath = "//span[text()='Parameters']")
     private WebElement ParametersButton;
+
     @FindBy(xpath = "//span[text()='Countries']")
     private WebElement CountriesButton;
+
     @FindBy(xpath = "//span[text()='Cities']")
     private WebElement CityButton;
+
+    @FindBy(xpath = "//span[text()='Education']")
+    private WebElement educationButton;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[5]")
+    private WebElement educationSetupButton;
+
+    @FindBy(xpath = "//span[text()='Subject Categories']")
+    private WebElement subjectCategories;
+
+    @FindBy(xpath = "(//span[text()='Subjects'])[1]")
+    private WebElement subjectButton;
 
 
 
@@ -47,7 +62,18 @@ public class LeftNavElementsNY extends _01_ParentClass{
             case "CityButton":
                 myElement =CityButton;
                 break;
-
+            case "educationButton":
+                myElement =educationButton;
+                break;
+            case "educationSetupButton":
+                myElement =educationSetupButton;
+                break;
+            case "subjectCategories":
+                myElement =subjectCategories;
+                break;
+            case "subjectButton":
+                myElement =subjectButton;
+                break;
 
         }
         clickFunction(myElement);

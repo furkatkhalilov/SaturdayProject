@@ -12,6 +12,7 @@ import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class _01_ParentClass {
@@ -110,7 +111,15 @@ public class _01_ParentClass {
         list.get(list.size()-1).click();
     }
 
+    public void navigateBack(){
+        driver.navigate().back();
+    }
 
+    public void clickOnRandomElementInTheDropdown(List<WebElement> webElementList){
+        Random random = new Random();
+        int index = random.nextInt(webElementList.size());
+        webElementList.get(index).click();
+    }
 
 
 
