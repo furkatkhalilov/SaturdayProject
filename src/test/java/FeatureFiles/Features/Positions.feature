@@ -1,55 +1,56 @@
-Feature: Position Salary functionality
+Feature: Positions functionality
 
   Background:
     Given Navigate to basqar
     When Enter the username and password and click on login button
     Then User should login successfully
 
-  @PositionsSalary
-  Scenario Outline: Create Position Salary
+  @Positions
+  Scenario Outline: Create Position
     Given Click in the leftnav class
       | HumanResources      |
       | HumanResourcesSetup |
-      | PositionSalary      |
+      | Position            |
     Then Click on element inside dialog content
       | AddButton |
     And Fill out fields
-      | Name | <Position Salary Name> |
+      | Name           | <Position Name> |
+      | shortNameInput | <Short Name>    |
     Then Click on element inside dialog content
       | SaveButton |
     Then Success message should be displayed
     Examples:
-      | Position Salary Name |
-      | QA Tester            |
+      | Position Name | Short Name |
+      | QA Tester     | QA         |
 
-  @PositionsSalary
-  Scenario Outline: Edit Position Salary
+  @Positions
+  Scenario Outline: Edit Position
     Given Click in the leftnav class
       | HumanResources      |
       | HumanResourcesSetup |
-      | PositionSalary      |
+      | Position            |
     And Delete or Edit Function
-      | <Position Salary Name> | edit |
+      | <Position Name> | edit |
     And Fill out fields
-      | Name | <Position Salary Name Edited> |
+      | NameInput | <Position Name Edited> |
     Then Click on element inside dialog content
       | SaveButton |
     Then Success message should be displayed
     Examples:
-      | Position Salary Name | Position Salary Name Edited |
-      | QA Tester            | QA Engineer                 |
+      | Position Name | Position Name Edited |
+      | QA Tester     | QA Engineer          |
 
-  @PositionsSalary
-  Scenario Outline: Delete Position Salary
+  @Positions
+  Scenario Outline: Delete Position
     Given Click in the leftnav class
       | HumanResources      |
       | HumanResourcesSetup |
-      | PositionSalary      |
+      | Position            |
     And Delete or Edit Function
-      | <Position Salary Name Edited> | delete |
+      | <Position Name Edited> | delete |
     Then Click on element inside dialog content
       | yesButton |
     Then Success message should be displayed
     Examples:
-      | Position Salary Name Edited |
-      | QA Engineer                 |
+      | Position Name Edited |
+      | QA Engineer          |

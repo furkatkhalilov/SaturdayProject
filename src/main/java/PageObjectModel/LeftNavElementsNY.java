@@ -50,6 +50,27 @@ public class LeftNavElementsNY extends _01_ParentClass{
     @FindBy(xpath = "//span[text()='Positions']\n")
     private WebElement Position;
 
+    @FindBy(xpath = "(//span[text()='Reports'])[3]")
+    private WebElement Reports;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[7]")
+    private WebElement ReportsSetup;
+
+    @FindBy(xpath = "//span[text()='Excel Template']")
+    private WebElement ExcelTemplate;
+
+    @FindBy(xpath = "//span[text()='Salary Types']")
+    private WebElement SalaryTypes;
+
+    @FindBy(xpath = "//span[text()='Salary Modifiers']")
+    private WebElement SalaryModifier;
+
+
+
+
+
+
+
 
 
     //------------------------------------------//
@@ -98,6 +119,25 @@ public class LeftNavElementsNY extends _01_ParentClass{
             case "Position":
                 myElement = Position;
                 break;
+            case "Reports":
+                myElement = Reports;
+                break;
+            case "ReportsSetup":
+                myElement = ReportsSetup;
+                break;
+            case "ExcelTemplate":
+                myElement = ExcelTemplate;
+                break;
+            case "SalaryTypes":
+                myElement = SalaryTypes;
+                break;
+            case "SalaryModifier":
+                myElement = SalaryModifier;
+                break;
+
+
+
+
 
         }
         clickFunction(myElement);

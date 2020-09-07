@@ -1,11 +1,15 @@
-<suite name ="suite1" parallel = "classes" thread-count="2">
+<suite name ="suite1" parallel = "classes" thread-count="6">
 
     <test name = "firefox">
 
         <parameter name="browser" value = "firefox"/>
         <classes>
-            <class name="Runners.CountryScenario"/>
-            <class name="Runners.SubjectScenario"/>
+<!--            <class name="Runners.CountryScenario"/>-->
+<!--            <class name="Runners.SubjectScenario"/>-->
+            <class name="Runners.ExcelTemplateScenario"/>
+<!--            <class name="Runners.PositionsScenario"/>-->
+<!--            <class name="Runners.PostitionSalaryScenario"/>-->
+<!--            <class name="Runners.SalaryTypesScenario"/>-->
 
         </classes>
     </test>
@@ -14,8 +18,12 @@
     <test name = "chrome">
         <parameter name="browser" value = "chrome"/>
         <classes>
-            <class name="Runners.CountryScenario"/>
-            <class name="Runners.SubjectScenario"/>
+<!--            <class name="Runners.CountryScenario"/>-->
+<!--            <class name="Runners.SubjectScenario"/>-->
+<!--            <class name="Runners.ExcelTemplateScenario"/>-->
+<!--            <class name="Runners.PositionsScenario"/>-->
+<!--            <class name="Runners.PostitionSalaryScenario"/>-->
+<!--            <class name="Runners.SalaryTypesScenario"/>-->
         </classes>
     </test>
 </suite>

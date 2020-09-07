@@ -1,55 +1,60 @@
-Feature: Position Salary functionality
+Feature: Salary Type functionality
 
   Background:
     Given Navigate to basqar
     When Enter the username and password and click on login button
     Then User should login successfully
 
-  @PositionsSalary
-  Scenario Outline: Create Position Salary
+  @SalaryTypes
+  Scenario Outline: Create Salary Type
     Given Click in the leftnav class
       | HumanResources      |
       | HumanResourcesSetup |
-      | PositionSalary      |
+      | SalaryTypes         |
     Then Click on element inside dialog content
       | AddButton |
     And Fill out fields
-      | Name | <Position Salary Name> |
+      | Name | <Salary Type Name> |
+
+    And Randomly select from "UserTypeDropDownButton" dropdown list
     Then Click on element inside dialog content
       | SaveButton |
     Then Success message should be displayed
     Examples:
-      | Position Salary Name |
-      | QA Tester            |
+      | Salary Type Name |
+      | QA Tester        |
 
-  @PositionsSalary
-  Scenario Outline: Edit Position Salary
+  @SalaryTypes
+  Scenario Outline: Edit Salary Type
     Given Click in the leftnav class
       | HumanResources      |
       | HumanResourcesSetup |
-      | PositionSalary      |
+      | SalaryTypes         |
     And Delete or Edit Function
-      | <Position Salary Name> | edit |
+      | <Salary Type Name> | edit |
     And Fill out fields
-      | Name | <Position Salary Name Edited> |
+      | Name | <Salary Type Name Edited> |
+    Then Click on element inside dialog content
+      | UserIconImg |
+    And Randomly select from "UserTypeDropDownButton" dropdown list
     Then Click on element inside dialog content
       | SaveButton |
     Then Success message should be displayed
     Examples:
-      | Position Salary Name | Position Salary Name Edited |
-      | QA Tester            | QA Engineer                 |
+      | Salary Type Name | Salary Type Name Edited |
+      | QA Tester        | QA Engineer             |
 
-  @PositionsSalary
-  Scenario Outline: Delete Position Salary
+  @SalaryTypes
+  Scenario Outline: Delete Salary Type
     Given Click in the leftnav class
       | HumanResources      |
       | HumanResourcesSetup |
-      | PositionSalary      |
+      | SalaryTypes         |
     And Delete or Edit Function
-      | <Position Salary Name Edited> | delete |
+      | <Salary Type Name Edited> | delete |
     Then Click on element inside dialog content
       | yesButton |
     Then Success message should be displayed
     Examples:
-      | Position Salary Name Edited |
-      | QA Engineer                 |
+      | Salary Type Name Edited |
+      | QA Engineer             |

@@ -22,7 +22,7 @@ public class DialogContentNY extends _01_ParentClass {
 
 
     //-------------------------//
-    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'TITLE.ADD')]//button")
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'.ADD')]//button")
     private WebElement AddButton;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input")
@@ -70,6 +70,16 @@ public class DialogContentNY extends _01_ParentClass {
     @FindBy(xpath = "//mat-select[@role='listbox']//span[text()='Style']")
     private WebElement subjectStyle;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']/input")
+    private WebElement shortNameInput;
+
+    @FindBy(xpath = "//input[@placeholder='User Type']")
+    private WebElement UserTypeDropDownButton;
+
+    @FindBy(xpath = "//mat-icon[text()='cancel']")
+    private WebElement UserIconImg;
+
+
 
 
 
@@ -99,6 +109,15 @@ public class DialogContentNY extends _01_ParentClass {
             case "subjectStyle":
                 myElement = subjectStyle;
                 break;
+            case "UserTypeDropDownButton":
+                myElement = UserTypeDropDownButton;
+                break;
+            case "UserIconImg":
+                myElement = UserIconImg;
+                break;
+
+
+
 
 
 
@@ -125,6 +144,12 @@ public class DialogContentNY extends _01_ParentClass {
             case "Name":
                 myElement = Name;
                 break;
+            case "shortNameInput":
+                myElement = shortNameInput;
+                break;
+
+
+
 
 
         }
